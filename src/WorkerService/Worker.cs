@@ -38,7 +38,7 @@ public class Worker : BackgroundService
             PinEventTypes.Falling | PinEventTypes.Rising,
             OnPinEvent);
 
-        await Task.Delay(Timeout.Infinite);
+        await Task.Delay(Timeout.Infinite, stoppingToken);
 
         while (!stoppingToken.IsCancellationRequested)
         {
