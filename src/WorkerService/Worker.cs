@@ -1,5 +1,6 @@
 ﻿using AudioGuestbook.Infrastructure.Sound;
 using System.Device.Gpio;
+using System.Device.Gpio.Drivers;
 using System.Net.NetworkInformation;
 
 namespace AudioGuestbook.WorkerService;
