@@ -1,18 +1,27 @@
-using AudioGuestbook.Infrastructure.Sound;
 using AudioGuestbook.WorkerService;
-using AudioGuestbook.WorkerService.Extensions;
+using AudioGuestbook.WorkerService.Services;
 
 //TODO: Seal all classes
 
-var host = Host.CreateDefaultBuilder(args)
-    .ConfigureServices((context, services) =>
-    {
-        services
-            .AddAppSettings<SoundSettings>(context.Configuration.GetSection(SoundSettings.SectionKey))
-            .AddSingleton<ISoundService, SoundService>()
-            .AddHostedService<Worker>();
+try
+{
+    var host = Host.CreateDefaultBuilder(args)
+        .ConfigureServices((_, services) =>
+        {
+            services
+                .AddSingleton<IAppStatus, AppStatus>()
+                .AddSingleton<IGpioAccess, GpioAccess>()
+                .AddSingleton<IAudioOutput, AudioOutput>()
+                .AddHostedService<LedStatusWorker>()
+                .AddHostedService<ProcessWorker>();
 
-    })
-    .Build();
+        })
+        .Build();
 
-host.Run();
+    host.Run();
+}
+catch (Exception ex)
+{
+    Console.WriteLine(ex.ToString());
+    Console.ReadLine();
+}

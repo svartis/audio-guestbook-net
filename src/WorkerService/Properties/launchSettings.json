@@ -1,11 +1,14 @@
-﻿{
+{
   "profiles": {
     "WorkerService": {
       "commandName": "Project",
-      "dotnetRunMessages": true,
       "environmentVariables": {
         "DOTNET_ENVIRONMENT": "Development"
-      }
+      },
+      "dotnetRunMessages": true,
+      "remoteDebugEnabled": false,
+      "remoteDebugMachine": "192.168.5.132",
+      "authenticationMode": "Windows"
     }
   }
 }
