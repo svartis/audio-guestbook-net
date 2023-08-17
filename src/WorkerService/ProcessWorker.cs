@@ -9,17 +9,23 @@ public sealed class ProcessWorker : BackgroundService
     private readonly ILogger<ProcessWorker> _logger;
     private readonly IAppStatus _appStatus;
     private readonly IAudioOutput _audioOutput;
+    private readonly IAudioRecorder _audioRecorder;
     private readonly IGpioAccess _gpioAccess;
 
     private readonly float _masterVolume = 0.5f;
 
     private readonly string _greetingAudioFile;
 
-    public ProcessWorker(ILogger<ProcessWorker> logger, IAppStatus appStatus, IAudioOutput audioOutput, IGpioAccess gpioAccess)
+    public ProcessWorker(ILogger<ProcessWorker> logger, 
+        IAppStatus appStatus, 
+        IAudioOutput audioOutput, 
+        IAudioRecorder audioRecorder, 
+        IGpioAccess gpioAccess)
     {
         _logger = logger;
         _appStatus = appStatus;
         _audioOutput = audioOutput;
+        _audioRecorder = audioRecorder;
         _gpioAccess = gpioAccess;
 
         var systemMediaFolderPath = Path.Combine(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location)!, "Media");
@@ -60,6 +66,7 @@ public sealed class ProcessWorker : BackgroundService
                     await Task.Delay(1000, stoppingToken);
 
                     // Play the greeting inviting them to record their message
+                    //TODO: Move to audio service
                     using (var audioFile = new AudioFileReader(_greetingAudioFile))
                     using (var outputDevice = new WaveOutEvent())
                     {
@@ -89,7 +96,8 @@ public sealed class ProcessWorker : BackgroundService
                     await _audioOutput.PlayBeepAsync(stoppingToken);
 
                     _logger.LogInformation("Start the recording function");
-                    StartRecording();
+                    _audioRecorder.Start();
+                    _appStatus.SetMode(Mode.Recording);
                 AbortPrompting:
                     break;
                 case Mode.Recording:
@@ -99,9 +107,11 @@ public sealed class ProcessWorker : BackgroundService
                         // Debug log
                         _logger.LogInformation("Stopping Recording");
                         // Stop recording
-                        StopRecording();
+                        _audioRecorder.Stop();
                         // Play audio tone to confirm recording has ended
                         await _audioOutput.PlayBeepAsync(stoppingToken);
+
+                        _appStatus.SetMode(Mode.Ready);
                     }
                     else
                     {

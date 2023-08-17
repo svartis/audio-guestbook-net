@@ -5,10 +5,12 @@ namespace AudioGuestbook.WorkerService;
 public sealed class LedStatusWorker : BackgroundService
 {
     private readonly IAppStatus _appStatus;
+    private readonly IGpioAccess _gpioAccess;
 
-    public LedStatusWorker(IAppStatus appStatus)
+    public LedStatusWorker(IAppStatus appStatus, IGpioAccess gpioAccess)
     {
         _appStatus = appStatus;
+        _gpioAccess = gpioAccess;
     }
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
