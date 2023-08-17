@@ -1,0 +1,9 @@
+<Project>
+	<PropertyGroup>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<LangVersion>latest</LangVersion>
+		<AssemblyName>AudioGuestbook.$(MSBuildProjectName)</AssemblyName>
+		<RootNamespace>AudioGuestbook.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+	</PropertyGroup>
+</Project>

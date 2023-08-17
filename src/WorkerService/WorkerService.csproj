@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<!--<TargetFramework>net7.0</TargetFramework>-->
+		<TargetFramework>net6.0-windows10.0.17763.0</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove="Media\beep.wav" />
+	  <None Remove="Media\greeting.wav" />
+	  <None Remove="Media\startup.wav" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="Media\beep.wav">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Media\greeting.wav">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Media\startup.wav">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
+		<PackageReference Include="NAudio" Version="2.1.0" />
+		<PackageReference Include="System.Device.Gpio" Version="3.0.0" />
+	</ItemGroup>
+</Project>
