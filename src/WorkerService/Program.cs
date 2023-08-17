@@ -2,6 +2,11 @@ using AudioGuestbook.WorkerService;
 using AudioGuestbook.WorkerService.Services;
 
 //TODO: Seal all classes
+//TODO: Create collected settings
+//TODO: Git action, build, test, sonarqube
+//TODO: ReadMe
+//TODO: Tests
+//TODO: fritzing diagram 
 
 try
 {
@@ -12,6 +17,7 @@ try
                 .AddSingleton<IAppStatus, AppStatus>()
                 .AddSingleton<IGpioAccess, GpioAccess>()
                 .AddSingleton<IAudioOutput, AudioOutput>()
+                .AddSingleton<IAudioRecorder, AudioRecorder>()
                 .AddHostedService<LedStatusWorker>()
                 .AddHostedService<ProcessWorker>();
 
@@ -23,5 +29,4 @@ try
 catch (Exception ex)
 {
     Console.WriteLine(ex.ToString());
-    Console.ReadLine();
 }
