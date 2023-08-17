@@ -9,8 +9,8 @@ on:
 env:
   BUILD_CONFIGURATION: 'Release'
   DOTNET_VERSION: '7.x'
-  RestoreBuildProjects: '**/*.sln'
-  TestProjects: '**/*.sln'
+  RestoreBuildProjects: '.\src'
+  TestProjects: '.\src'
 
 jobs:
   build:
