@@ -32,12 +32,8 @@ jobs:
       run: dotnet restore ${{ env.RestoreBuildProjects }}
 
     - name: SonarScanner Start
-      run: dotnet sonarscanner begin \
-              /o:svartis \
-              /k:svartis_audio-guestbook-net \
-              /d:sonar.host.url=https://sonarcloud.io
-              /d:sonar.token="${{ env.SONAR_TOKEN }}"
-      
+      run: dotnet sonarscanner begin /o:svartis /k:svartis_audio-guestbook-net /d:sonar.host.url=https://sonarcloud.io /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+
     - name: Build
       run: dotnet build ${{ env.RestoreBuildProjects }} --configuration '${{ env.BUILD_CONFIGURATION }}' --no-restore
       
@@ -45,5 +41,4 @@ jobs:
       run: dotnet test ${{ env.TestProjects }} --configuration '${{ env.BUILD_CONFIGURATION }}' --no-restore --no-build --verbosity normal /p:CollectCoverage=true /p:CoverletOutputFormat=opencover --collect="XPlat Code Coverage"
 
     - name: SonarScanner End
-      run: dotnet sonarscanner end \
-              /d:sonar.token="${{ env.SONAR_TOKEN }}"
+      run: dotnet sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
