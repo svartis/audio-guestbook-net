@@ -2,10 +2,10 @@ using AudioGuestbook.WorkerService.Services;
 
 //TODO: Seal all classes
 //TODO: Create collected settings
-//TODO: Git action, build, test, sonarqube
 //TODO: ReadMe
 //TODO: Tests
-//TODO: fritzing diagram 
+//TODO: Fritzing diagram 
+//TODO: Timeout for recording
 
 namespace AudioGuestbook.WorkerService;
 

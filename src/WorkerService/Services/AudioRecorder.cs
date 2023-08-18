@@ -6,6 +6,7 @@ public interface IAudioRecorder
 {
     void Start();
     void Stop();
+    string? GetLatestRecordingFilePath();
 }
 
 public sealed class AudioRecorder : IAudioRecorder
@@ -17,6 +18,7 @@ public sealed class AudioRecorder : IAudioRecorder
 
     public void Start()
     {
+        // TODO: Cleanup
         int inputDeviceIndex = -1;
         for (var n = -1; n < WaveIn.DeviceCount; n++)
         {
@@ -71,5 +73,15 @@ public sealed class AudioRecorder : IAudioRecorder
         }
         _waveWriter.Dispose();
         _waveWriter = null;
+    }
+
+    public string? GetLatestRecordingFilePath()
+    {
+        var directory = new DirectoryInfo(FilePath);
+        var pattern = "*.wav";
+        var myFile = directory.GetFiles(pattern)
+            .OrderByDescending(f => f.LastWriteTime)
+            .FirstOrDefault();
+        return myFile?.FullName;
     }
 }

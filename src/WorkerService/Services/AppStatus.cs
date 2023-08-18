@@ -4,30 +4,27 @@ namespace AudioGuestbook.WorkerService.Services;
 
 public interface IAppStatus
 {
-    void SetMode(Mode mode);
-    Mode GetMode();
+    public Mode Mode { get; set; }
 }
 
 public sealed class AppStatus : IAppStatus
 {
     private readonly ILogger<AppStatus> _logger;
 
-    private Mode _mode;
+    private Mode _mode = Mode.Initialising;
 
     public AppStatus(ILogger<AppStatus> logger)
     {
         _logger = logger;
-        SetMode(Mode.Initialising);
     }
 
-    public void SetMode(Mode mode)
+    public Mode Mode
     {
-        _logger.LogInformation("Mode switched to: {mode}", mode);
-        _mode = mode;
-    }
-
-    public Mode GetMode()
-    {
-        return _mode;
+        get => _mode;
+        set
+        {
+            _logger.LogInformation("Mode switched to: {mode}", value);
+            _mode = value;
+        }
     }
 }
