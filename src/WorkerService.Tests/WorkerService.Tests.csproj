@@ -8,6 +8,24 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <None Remove="Media\beep.wav" />
+	  <None Remove="Media\greeting.wav" />
+	  <None Remove="Media\startup.wav" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="Media\greeting.wav">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Media\startup.wav">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Media\beep.wav">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.1" />
 		<PackageReference Include="Meziantou.Xunit.ParallelTestFramework" Version="2.1.0" />
 		<PackageReference Include="xunit" Version="2.5.0" />

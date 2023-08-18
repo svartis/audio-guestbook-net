@@ -1,7 +1,6 @@
 using AudioGuestbook.WorkerService.Services;
 using FluentAssertions;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.VisualStudio.TestPlatform.TestHost;
 
 namespace AudioGuestbook.WorkerService.Tests;
 

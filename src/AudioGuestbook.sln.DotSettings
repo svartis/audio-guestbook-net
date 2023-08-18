@@ -3,4 +3,6 @@
 	
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=Gpio/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=Guestbook/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=Initialising/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=Leds/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=Unregister/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>

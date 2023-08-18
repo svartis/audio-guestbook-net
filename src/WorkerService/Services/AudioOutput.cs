@@ -19,7 +19,6 @@ public sealed class AudioOutput : IAudioOutput
 
     private readonly float _masterVolume = 0.5f;
 
-
     public AudioOutput(ILogger<AudioOutput> logger)
     {
         _logger = logger;
@@ -29,10 +28,9 @@ public sealed class AudioOutput : IAudioOutput
         _greetingAudioFile = Path.Combine(systemMediaFolderPath, "greeting.wav");
     }
 
-
     public async Task PlayStartupAsync(CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Playing startup audio");
+        _logger.LogInformation("Start startup audio");
 
         await using var audioFile = new AudioFileReader(_startupAudioFile);
         using var outputDevice = new WaveOutEvent();
@@ -43,11 +41,13 @@ public sealed class AudioOutput : IAudioOutput
         {
             await Task.Delay(50, cancellationToken);
         }
+
+        _logger.LogInformation("Stop startup audio");
     }
 
     public async Task PlayBeepAsync(CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Playing beep audio");
+        _logger.LogInformation("Start beep audio");
 
         await using var audioFile = new AudioFileReader(_beepAudioFile);
         using var outputDevice = new WaveOutEvent();
@@ -58,6 +58,8 @@ public sealed class AudioOutput : IAudioOutput
         {
             await Task.Delay(50, cancellationToken);
         }
+
+        _logger.LogInformation("Stop beep audio");
     }
 
     public Task PlayGreetingAsync(CancellationToken cancellationToken)

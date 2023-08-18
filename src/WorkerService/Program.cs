@@ -6,6 +6,7 @@ using AudioGuestbook.WorkerService.Services;
 //TODO: Tests
 //TODO: Fritzing diagram 
 //TODO: Timeout for recording
+//TODO: TagetFramework latest to allow build on linux
 
 namespace AudioGuestbook.WorkerService;
 
