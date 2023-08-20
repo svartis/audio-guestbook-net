@@ -36,32 +36,6 @@ public sealed class AudioRecorderTests
         Directory.GetFiles(path).Length.Should().Be(1);
     }
 
-    [Fact]
-    public void GetAudioRecordingPath_WhenFilesExists_ShouldReturnExpectedFile()
-    {
-        // Arrange
-        _appSettings.AudioRecordingPath = GetAudioRecordingPath("Latest", false);
-
-        // Act
-        var result = _service.GetLatestRecordingFilePath();
-
-        // Assert
-        Path.GetFileName(result).Should().Be("beep.wav");
-    }
-
-    [Fact]
-    public void GetAudioRecordingPath_WhenNoFiles_ShouldReturnNull()
-    {
-        // Arrange
-        _appSettings.AudioRecordingPath = GetAudioRecordingPath("Latest-Empty", false);
-
-        // Act
-        var result = _service.GetLatestRecordingFilePath();
-
-        // Assert
-        result.Should().BeNull();
-    }
-
     private static string GetAudioRecordingPath(string folder, bool clean)
     {
         var path = Path.Combine(Directory.GetCurrentDirectory(), "Recordings", folder);

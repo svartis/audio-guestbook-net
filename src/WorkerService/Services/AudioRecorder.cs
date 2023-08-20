@@ -6,7 +6,6 @@ public interface IAudioRecorder
 {
     void Start();
     void Stop();
-    string? GetLatestRecordingFilePath();
 }
 
 public sealed class AudioRecorder : IAudioRecorder
@@ -54,14 +53,6 @@ public sealed class AudioRecorder : IAudioRecorder
             _waveWriter.Dispose();
             _waveWriter = null;
         }
-    }
-
-    public string? GetLatestRecordingFilePath()
-    {
-        EnsureFolderExists();
-        var directory = new DirectoryInfo(_appSettings.AudioRecordingPath);
-        var fileInfo = directory.GetFiles("*.wav").MaxBy(f => f.LastWriteTime);
-        return fileInfo?.FullName;
     }
 
     private void SourceStreamDataAvailable(object? sender, WaveInEventArgs e)

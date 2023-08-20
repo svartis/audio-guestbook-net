@@ -58,9 +58,6 @@ public sealed class ProcessWorker : BackgroundService
             case Mode.Recording:
                 await ModeRecording(cancellationToken);
                 break;
-            case Mode.Playback:
-                await ModePlayback(cancellationToken);
-                break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(mode), mode, null);
         }
@@ -72,11 +69,6 @@ public sealed class ProcessWorker : BackgroundService
         {
             _logger.LogInformation("Handset lifted");
             _appStatus.Mode = Mode.Prompting;
-        }
-        else if (_gpioAccess.PlaybackPressed)
-        {
-            _logger.LogInformation("Playback pressed");
-            _appStatus.Mode = Mode.Playback;
         }
     }
 
@@ -94,14 +86,6 @@ public sealed class ProcessWorker : BackgroundService
                 _appStatus.Mode = Mode.Ready;
                 return true;
             }
-
-            // Playback button pressed
-            if (_gpioAccess.PlaybackPressed)
-            {
-                _appStatus.Mode = Mode.Playback;
-                return true;
-            }
-
             return false;
         }, cancellationToken);
 
@@ -129,40 +113,5 @@ public sealed class ProcessWorker : BackgroundService
 
             _appStatus.Mode = Mode.Ready;
         }
-    }
-
-    internal async Task ModePlayback(CancellationToken cancellationToken)
-    {
-        // Find latest recording
-        var fileName = _audioRecorder.GetLatestRecordingFilePath();
-
-        // Skip if none found
-        if (string.IsNullOrWhiteSpace(fileName))
-        {
-            _appStatus.Mode = Mode.Ready;
-            return;
-        }
-
-        // PlayAsync latest file
-        var playbackCanceled = await _audioOutput.PlayAsync(fileName, () =>
-        {
-            // Playback button is released or Handset is replaced
-            if (!_gpioAccess.PlaybackPressed || !_gpioAccess.HandsetLifted)
-            {
-                return true;
-            }
-
-            return false;
-        }, cancellationToken);
-
-        if (playbackCanceled)
-        {
-            _appStatus.Mode = Mode.Ready;
-            return;
-        }
-
-        // file has been played
-        await _audioOutput.PlayBeepAsync(cancellationToken);
-        _appStatus.Mode = Mode.Ready;
     }
 }

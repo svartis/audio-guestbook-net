@@ -5,7 +5,6 @@ namespace AudioGuestbook.WorkerService.Services;
 public interface IGpioAccess
 {
     bool HandsetLifted { get; }
-    bool PlaybackPressed { get; }
     bool GreenLedOn { get; set; }
     bool YellowLedOn { get; set; }
     bool RedLedOn { get; set; }
@@ -17,9 +16,6 @@ public sealed class GpioAccess : IGpioAccess, IDisposable
     
     internal const int HandsetPinNumber = 5;
     private readonly GpioPin _handsetGpioPin;
-
-    internal const int PlaybackPinNumber = 6;
-    private readonly GpioPin _playbackGpioPin;
 
     internal const int GreenLedPinNumber = 18;
     private readonly GpioPin _greenLedGpioPin;
@@ -35,7 +31,6 @@ public sealed class GpioAccess : IGpioAccess, IDisposable
         _gpioController = gpioController;
 
         _handsetGpioPin = _gpioController.OpenPin(HandsetPinNumber, PinMode.InputPullUp);
-        _playbackGpioPin = _gpioController.OpenPin(PlaybackPinNumber, PinMode.InputPullUp);
 
         _greenLedGpioPin = _gpioController.OpenPin(GreenLedPinNumber, PinMode.Output);
         _yellowLedGpioPin = _gpioController.OpenPin(YellowLedPinNumber, PinMode.Output);
@@ -43,8 +38,6 @@ public sealed class GpioAccess : IGpioAccess, IDisposable
     }
 
     public bool HandsetLifted => _handsetGpioPin.Read() == PinValue.Low;
-
-    public bool PlaybackPressed => _playbackGpioPin.Read() == PinValue.Low;
 
     public bool GreenLedOn
     {

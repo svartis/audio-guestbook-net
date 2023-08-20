@@ -24,7 +24,6 @@ public sealed class LedStatusWorkerTests
     [InlineData(Mode.Ready, true, false, false)]
     [InlineData(Mode.Prompting, false, true, false)]
     [InlineData(Mode.Recording, false, false, true)]
-    [InlineData(Mode.Playback, false, true, false)]
     public async Task ExecuteAsync_Should_Set_GpioAccess_Properties(Mode mode, bool greenLedOn, bool yellowLedOn, bool redLedOn)
     {
         // Arrange

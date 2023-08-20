@@ -21,7 +21,6 @@ public sealed class AppStatusTests
     [InlineData(Mode.Ready)]
     [InlineData(Mode.Prompting)]
     [InlineData(Mode.Recording)]
-    [InlineData(Mode.Playback)]
     public void Mode_ShouldSetAndReadValueCorrectly(Mode mode)
     {
         // Act

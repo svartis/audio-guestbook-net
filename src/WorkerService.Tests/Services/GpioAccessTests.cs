@@ -33,22 +33,6 @@ public sealed class GpioAccessTests
     }
 
     [Theory]
-    [InlineData(GpioAccess.PlaybackPinNumber, false, true)]
-    [InlineData(GpioAccess.PlaybackPinNumber, true, false)]
-    public void PlaybackPressed_ShouldSetAndReadValueCorrectly(int pinNumber, bool pinHigh, bool expectedResult)
-    {
-        // Arrange
-        _gpioController.OpenPin(pinNumber, PinMode.Output);
-        _gpioController.Write(pinNumber, pinHigh ? PinValue.High : PinValue.Low);
-
-        // Act
-        var result = _gpioAccess.PlaybackPressed;
-
-        // Assert
-        result.Should().Be(expectedResult);
-    }
-
-    [Theory]
     [InlineData(GpioAccess.GreenLedPinNumber, false, false)]
     [InlineData(GpioAccess.GreenLedPinNumber, true, true)]
     public void GreenLedOn_ShouldSetAndReadValueCorrectly(int pinNumber, bool pinHigh, bool expectedResult)

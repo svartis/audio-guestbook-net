@@ -45,7 +45,6 @@ public sealed class ProcessWorkerTests
     [InlineData(Mode.Ready)]
     [InlineData(Mode.Prompting)]
     [InlineData(Mode.Recording)]
-    [InlineData(Mode.Playback)]
     public async Task SwitchModes_ShouldNotThrowErrors(Mode mode)
     {
         // Act
@@ -66,16 +65,13 @@ public sealed class ProcessWorkerTests
     }
 
     [Theory]
-    [InlineData(false, false, Mode.Ready)]
-    [InlineData(true, false, Mode.Prompting)]
-    [InlineData(false, true, Mode.Playback)]
-    [InlineData(true, true, Mode.Prompting)]
-    public void ModeReady_Tests(bool handsetLifted, bool playbackPressed, Mode expectedMode)
+    [InlineData(false, Mode.Ready)]
+    [InlineData(true, Mode.Prompting)]
+    public void ModeReady_Tests(bool handsetLifted, Mode expectedMode)
     {
         // Arrange
         _appStatus.Mode = Mode.Ready;
         _gpioAccess.HandsetLifted.Returns(handsetLifted);
-        _gpioAccess.PlaybackPressed.Returns(playbackPressed);
 
         // Act
         _worker.ModeReady();
@@ -85,22 +81,17 @@ public sealed class ProcessWorkerTests
     }
 
     [Theory]
-    [InlineData(false, false, false, Mode.Recording)]
-    [InlineData(false, false, true, Mode.Recording)]
-    [InlineData(false, true, false, Mode.Recording)]
-    [InlineData(false, true, true, Mode.Recording)]
-    [InlineData(true, false, false, Mode.Ready)]
-    [InlineData(true, false, true, Mode.Ready)]
-    [InlineData(true, true, false, Mode.Initialising)]
-    [InlineData(true, true, true, Mode.Playback)]
-    public async Task ModePrompting_Tests(bool greetingCanceled, bool handsetLifted, bool playbackPressed, Mode expectedMode)
+    [InlineData(false, false, Mode.Recording)]
+    [InlineData(false, true, Mode.Recording)]
+    [InlineData(true, false, Mode.Ready)]
+    [InlineData(true, true, Mode.Initialising)]
+    public async Task ModePrompting_Tests(bool greetingCanceled, bool handsetLifted, Mode expectedMode)
     {
         // Arrange
         _audioOutput
             .PlayGreetingAsync(Arg.InvokeDelegate<Func<bool>>(), Arg.Any<CancellationToken>())
             .Returns(greetingCanceled);
         _gpioAccess.HandsetLifted.Returns(handsetLifted);
-        _gpioAccess.PlaybackPressed.Returns(playbackPressed);
 
         // Act
         await _worker.ModePrompting(CancellationToken.None);
@@ -133,65 +124,5 @@ public sealed class ProcessWorkerTests
 
         // Assert
         _appStatus.Mode.Should().Be(expectedMode);
-    }
-
-    [Theory]
-    [InlineData("test.wav", Mode.Ready)]
-    [InlineData("", Mode.Ready)]
-    [InlineData(null, Mode.Ready)]
-    public async Task ModePlayback__LatestFile_Tests(string? latestFile, Mode expectedMode)
-    {
-        // Arrange
-        _audioRecorder.GetLatestRecordingFilePath().Returns(latestFile);
-
-        // Act
-        await _worker.ModePlayback(CancellationToken.None);
-
-        // Assert
-        _appStatus.Mode.Should().Be(expectedMode);
-        _audioRecorder.Received(1).GetLatestRecordingFilePath();
-        if (!string.IsNullOrWhiteSpace(latestFile))
-        {
-            await _audioOutput.Received(1).PlayAsync(Arg.Any<string>(), Arg.Any<Func<bool>>(), Arg.Any<CancellationToken>());
-        }
-        else
-        {
-            await _audioOutput.Received(0).PlayAsync(Arg.Any<string>(), Arg.Any<Func<bool>>(), Arg.Any<CancellationToken>());
-        }
-    }
-
-    [Theory]
-    [InlineData(false, false, false, Mode.Ready)]
-    [InlineData(false, false, true, Mode.Ready)]
-    [InlineData(false, true, false, Mode.Ready)]
-    [InlineData(false, true, true, Mode.Ready)]
-    [InlineData(true, false, false, Mode.Ready)]
-    [InlineData(true, false, true, Mode.Ready)]
-    [InlineData(true, true, false, Mode.Ready)]
-    [InlineData(true, true, true, Mode.Ready)]
-    public async Task ModePlayback_Tests(bool playbackCanceled, bool handsetLifted, bool playbackPressed, Mode expectedMode)
-    {
-        // Arrange
-        _appStatus.Mode = Mode.Playback;
-        _audioRecorder.GetLatestRecordingFilePath().Returns("test.wav");
-        _audioOutput
-            .PlayAsync(Arg.Any<string>(), Arg.InvokeDelegate<Func<bool>>(), Arg.Any<CancellationToken>())
-            .Returns(playbackCanceled);
-        _gpioAccess.HandsetLifted.Returns(handsetLifted);
-        _gpioAccess.PlaybackPressed.Returns(playbackPressed);
-
-        // Act
-        await _worker.ModePlayback(CancellationToken.None);
-
-        // Assert
-        _appStatus.Mode.Should().Be(expectedMode);
-        if (playbackCanceled)
-        {
-            await _audioOutput.Received(0).PlayBeepAsync(Arg.Any<CancellationToken>());
-        }
-        else
-        {
-            await _audioOutput.Received(1).PlayBeepAsync(Arg.Any<CancellationToken>());
-        }
     }
 }
