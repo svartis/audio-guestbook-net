@@ -9,10 +9,12 @@ https://www.youtube.com/watch?v=dI6ielrP1SE
 https://github.com/playfultechnology/audio-guestbook
 
 ## Why this setup:
-I don't have any Teensy or Audio Board for Teensy 4 hardware and I don't want to buy any extra for a 1 time use.
+In the original solution a Teensy 4.0 with an Audio Board is used as hardware.
+And since I don't want to buy any extra hardware for a 1 time time project I decided to create an solution that runs on Raspberry Pi 4.
 
-But have Raspberry Pi 4 and USB soundcard.
+Note: The Raspberry Pi 4 also require a USB soundcard to be able to record audio.
 
-Due to NAudio only working on windows the Raspberry Pi 4 is running Windows 11.
+## Limitations:
+Due to NAudio framework that is used for playing and recording wav files only working on windows the Raspberry Pi 4 is running Windows 11.
 
 https://www.worproject.com/
