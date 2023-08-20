@@ -136,18 +136,13 @@ public sealed class ProcessWorkerTests
     }
 
     [Theory]
-    [InlineData("test.wav", false, Mode.Ready)]
-    [InlineData("test.wav", true, Mode.Ready)]
-    [InlineData("", false, Mode.Ready)]
-    [InlineData(null, false, Mode.Ready)]
-    public async Task ModePlayback_Tests(string? latestFile, bool playbackCanceled, Mode expectedMode)
+    [InlineData("test.wav", Mode.Ready)]
+    [InlineData("", Mode.Ready)]
+    [InlineData(null, Mode.Ready)]
+    public async Task ModePlayback__LatestFile_Tests(string? latestFile, Mode expectedMode)
     {
         // Arrange
-        _appStatus.Mode = Mode.Playback;
         _audioRecorder.GetLatestRecordingFilePath().Returns(latestFile);
-        _audioOutput
-            .PlayAsync(Arg.Any<string>(), Arg.Any<Func<bool>>(), Arg.Any<CancellationToken>())
-            .Returns(playbackCanceled);
 
         // Act
         await _worker.ModePlayback(CancellationToken.None);
@@ -162,8 +157,34 @@ public sealed class ProcessWorkerTests
         else
         {
             await _audioOutput.Received(0).PlayAsync(Arg.Any<string>(), Arg.Any<Func<bool>>(), Arg.Any<CancellationToken>());
-            return;
         }
+    }
+
+    [Theory]
+    [InlineData(false, false, false, Mode.Ready)]
+    [InlineData(false, false, true, Mode.Ready)]
+    [InlineData(false, true, false, Mode.Ready)]
+    [InlineData(false, true, true, Mode.Ready)]
+    [InlineData(true, false, false, Mode.Ready)]
+    [InlineData(true, false, true, Mode.Ready)]
+    [InlineData(true, true, false, Mode.Ready)]
+    [InlineData(true, true, true, Mode.Ready)]
+    public async Task ModePlayback_Tests(bool playbackCanceled, bool handsetLifted, bool playbackPressed, Mode expectedMode)
+    {
+        // Arrange
+        _appStatus.Mode = Mode.Playback;
+        _audioRecorder.GetLatestRecordingFilePath().Returns("test.wav");
+        _audioOutput
+            .PlayAsync(Arg.Any<string>(), Arg.InvokeDelegate<Func<bool>>(), Arg.Any<CancellationToken>())
+            .Returns(playbackCanceled);
+        _gpioAccess.HandsetLifted.Returns(handsetLifted);
+        _gpioAccess.PlaybackPressed.Returns(playbackPressed);
+
+        // Act
+        await _worker.ModePlayback(CancellationToken.None);
+
+        // Assert
+        _appStatus.Mode.Should().Be(expectedMode);
         if (playbackCanceled)
         {
             await _audioOutput.Received(0).PlayBeepAsync(Arg.Any<CancellationToken>());
