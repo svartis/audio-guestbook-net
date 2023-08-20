@@ -46,11 +46,9 @@ public sealed class LedStatusWorkerTests
     {
         // Arrange
         _appStatus.Mode.Returns((Mode)99);
-        var cts = new CancellationTokenSource();
-        cts.CancelAfter(TimeSpan.FromMilliseconds(500));
 
         // Act
-        var act = () => _worker.StartAsync(cts.Token);
+        var act = () => _worker.StartAsync(CancellationToken.None);
 
         // Assert
         await act.Should().ThrowAsync<ArgumentOutOfRangeException>();

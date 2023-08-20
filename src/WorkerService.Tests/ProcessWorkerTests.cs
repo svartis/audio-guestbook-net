@@ -85,14 +85,22 @@ public sealed class ProcessWorkerTests
     }
 
     [Theory]
-    [InlineData(false, Mode.Recording)]
-    [InlineData(true, Mode.Initialising)]
-    public async Task ModePrompting_Tests(bool greetingCanceled, Mode expectedMode)
+    [InlineData(false, false, false, Mode.Recording)]
+    [InlineData(false, false, true, Mode.Recording)]
+    [InlineData(false, true, false, Mode.Recording)]
+    [InlineData(false, true, true, Mode.Recording)]
+    [InlineData(true, false, false, Mode.Ready)]
+    [InlineData(true, false, true, Mode.Ready)]
+    [InlineData(true, true, false, Mode.Initialising)]
+    [InlineData(true, true, true, Mode.Playback)]
+    public async Task ModePrompting_Tests(bool greetingCanceled, bool handsetLifted, bool playbackPressed, Mode expectedMode)
     {
         // Arrange
         _audioOutput
-            .PlayGreetingAsync(Arg.Any<Func<bool>>(), Arg.Any<CancellationToken>())
+            .PlayGreetingAsync(Arg.InvokeDelegate<Func<bool>>(), Arg.Any<CancellationToken>())
             .Returns(greetingCanceled);
+        _gpioAccess.HandsetLifted.Returns(handsetLifted);
+        _gpioAccess.PlaybackPressed.Returns(playbackPressed);
 
         // Act
         await _worker.ModePrompting(CancellationToken.None);
@@ -110,7 +118,6 @@ public sealed class ProcessWorkerTests
             _audioRecorder.Received(1).Start();
         }
     }
-
 
     [Theory]
     [InlineData(false, Mode.Ready)]
