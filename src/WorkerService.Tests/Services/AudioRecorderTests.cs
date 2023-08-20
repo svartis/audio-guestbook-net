@@ -1,4 +1,6 @@
 ﻿using AudioGuestbook.WorkerService.Services;
+using AudioGuestbook.WorkerService.Tests.Mocks;
+using NSubstitute;
 
 namespace AudioGuestbook.WorkerService.Tests.Services;
 
@@ -8,7 +10,9 @@ public class AudioRecorderTests
 
     public AudioRecorderTests()
     {
-        _service = new AudioRecorder();
+        var nSoundFactory = Substitute.For<INSoundFactory>();
+        nSoundFactory.GetWaveInEvent().Returns(new WaveInEventMock());
+        _service = new AudioRecorder(nSoundFactory);
     }
 
     [Fact]

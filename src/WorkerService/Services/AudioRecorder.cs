@@ -11,20 +11,20 @@ public interface IAudioRecorder
 
 public sealed class AudioRecorder : IAudioRecorder
 {
-    private WaveInEvent? _sourceStream;
+    private readonly INSoundFactory _nSoundFactory;
+    private IWaveIn? _sourceStream;
     private WaveFileWriter? _waveWriter;
 
     private const string FilePath = @"c:\Temp\Recordings";
-    private const int Rate = 44100;
-    private const int Bits = 16;
-    private const int Channels = 1;
+
+    public AudioRecorder(INSoundFactory nSoundFactory)
+    {
+        _nSoundFactory = nSoundFactory;
+    }
 
     public void Start()
     {
-        _sourceStream = new WaveInEvent
-        {
-            WaveFormat = new WaveFormat(Rate, Bits, Channels)
-        };
+        _sourceStream = _nSoundFactory.GetWaveInEvent();
 
         _sourceStream.DataAvailable += SourceStreamDataAvailable;
 
