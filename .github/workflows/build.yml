@@ -8,8 +8,8 @@ on:
 env:
   BUILD_CONFIGURATION: 'Release'
   DOTNET_VERSION: '7.x'
-  RestoreBuildProjects: '.\src'
-  TestProjects: '.\src'
+  RestoreBuildProjects: './src'
+  TestProjects: './src'
 
 jobs:
   build:
