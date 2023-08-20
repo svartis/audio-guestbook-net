@@ -5,6 +5,8 @@
 		<!-- This version was needed to be able to run the GpioController on windows -->
 		<TargetFramework>net7.0-windows10.0.22621.0</TargetFramework>
 		<TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+		<!--https://learn.microsoft.com/en-us/dotnet/core/extensions/workers?pivots=dotnet-7-0-->
+		<ServerGarbageCollection>true</ServerGarbageCollection>
 	</PropertyGroup>
 
 	<ItemGroup>
