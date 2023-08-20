@@ -1,4 +1,5 @@
-﻿using NAudio.Wave;
+﻿using System.Diagnostics.CodeAnalysis;
+using NAudio.Wave;
 
 namespace AudioGuestbook.WorkerService.Services;
 
@@ -8,6 +9,7 @@ public interface INSoundFactory
     IWaveIn GetWaveInEvent();
 }
 
+[ExcludeFromCodeCoverage]
 public sealed class NSoundFactory : INSoundFactory
 {
     public IWavePlayer GetWaveOutEvent()

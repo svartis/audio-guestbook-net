@@ -2,5 +2,5 @@
 
 public sealed class AppSettings
 {
-    public string AudioRecordingPath { get; set; } = @"c:\Temp\Recordings";
+    public string AudioRecordingPath { get; set; } = null!;
 }

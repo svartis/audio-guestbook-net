@@ -37,17 +37,6 @@ public sealed class AudioRecorder : IAudioRecorder
         _sourceStream.StartRecording();
     }
 
-
-    private void SourceStreamDataAvailable(object? sender, WaveInEventArgs e)
-    {
-        if (_waveWriter == null)
-        {
-            return;
-        }
-        _waveWriter.Write(e.Buffer, 0, e.BytesRecorded);
-        _waveWriter.Flush();
-    }
-
     public void Stop()
     {
         if (_sourceStream != null)
@@ -69,6 +58,16 @@ public sealed class AudioRecorder : IAudioRecorder
         var directory = new DirectoryInfo(_appSettings.AudioRecordingPath);
         var fileInfo = directory.GetFiles("*.wav").MaxBy(f => f.LastWriteTime);
         return fileInfo?.FullName;
+    }
+
+    private void SourceStreamDataAvailable(object? sender, WaveInEventArgs e)
+    {
+        if (_waveWriter == null)
+        {
+            return;
+        }
+        _waveWriter.Write(e.Buffer, 0, e.BytesRecorded);
+        _waveWriter.Flush();
     }
 
     private void EnsureFolderExists()

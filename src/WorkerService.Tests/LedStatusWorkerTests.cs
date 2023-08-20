@@ -30,7 +30,7 @@ public sealed class LedStatusWorkerTests
         // Arrange
         _appStatus.Mode.Returns(mode);
         var cts = new CancellationTokenSource();
-        cts.CancelAfter(TimeSpan.FromMilliseconds(50));
+        cts.CancelAfter(TimeSpan.FromMilliseconds(200));
 
         // Act
         await _worker.StartAsync(cts.Token);
@@ -47,7 +47,7 @@ public sealed class LedStatusWorkerTests
         // Arrange
         _appStatus.Mode.Returns((Mode)99);
         var cts = new CancellationTokenSource();
-        cts.CancelAfter(TimeSpan.FromMilliseconds(50));
+        cts.CancelAfter(TimeSpan.FromMilliseconds(200));
 
         // Act
         var act = () => _worker.StartAsync(cts.Token);

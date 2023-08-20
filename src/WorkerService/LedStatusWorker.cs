@@ -20,12 +20,12 @@ public sealed class LedStatusWorker : BackgroundService
 
         while (!stoppingToken.IsCancellationRequested)
         {
-            SwitchLeds(_appStatus.Mode);
+            SwitchModes(_appStatus.Mode);
             await Task.Delay(100, stoppingToken);
         }
     }
 
-    private void SwitchLeds(Mode mode)
+    private void SwitchModes(Mode mode)
     {
         switch (mode)
         {

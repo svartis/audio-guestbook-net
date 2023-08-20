@@ -1,5 +1,4 @@
 using AudioGuestbook.WorkerService.Services;
-using Microsoft.Extensions.DependencyInjection;
 using System.Device.Gpio;
 using Microsoft.Extensions.Options;
 
@@ -25,9 +24,10 @@ internal static class Program
             .ConfigureServices((context, services) =>
             {
                 services
-                    .Configure<AppSettings>(context.Configuration)
+                    .Configure<AppSettings>(context.Configuration.GetSection(nameof(AppSettings)))
                     .AddSingleton(resolver => resolver.GetRequiredService<IOptions<AppSettings>>().Value)
                     .AddSingleton<IAppStatus, AppStatus>()
+                    //TODO: GpioController for VS debug?
                     .AddSingleton<IGpioAccess, GpioAccess>(_ => new GpioAccess(new GpioController()))
                     .AddSingleton<INSoundFactory, NSoundFactory>()
                     .AddSingleton<IAudioOutput, AudioOutput>()
