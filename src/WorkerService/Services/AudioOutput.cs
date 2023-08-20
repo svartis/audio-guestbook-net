@@ -7,7 +7,6 @@ public interface IAudioOutput
     Task PlayStartupAsync(CancellationToken cancellationToken);
     Task PlayBeepAsync(CancellationToken cancellationToken);
     Task<bool> PlayGreetingAsync(Func<bool> cancelCondition, CancellationToken cancellationToken);
-    Task<bool> PlayAsync(string fileName, Func<bool> cancelCondition, CancellationToken cancellationToken);
 }
 
 public sealed class AudioOutput : IAudioOutput
@@ -34,30 +33,30 @@ public sealed class AudioOutput : IAudioOutput
 
     public async Task PlayStartupAsync(CancellationToken cancellationToken)
     {
-        await PlayAsync(_startupAudioFile, cancellationToken);
+        await PlayAsync(_startupAudioFile, _appSettings.StartupVolume, cancellationToken);
     }
 
     public async Task PlayBeepAsync(CancellationToken cancellationToken)
     {
-        await PlayAsync(_beepAudioFile, cancellationToken);
+        await PlayAsync(_beepAudioFile, _appSettings.BeepVolume, cancellationToken);
     }
 
     public async Task<bool> PlayGreetingAsync(Func<bool> cancelCondition, CancellationToken cancellationToken)
     {
-        return await PlayAsync(_greetingAudioFile, cancelCondition, cancellationToken);
+        return await PlayAsync(_greetingAudioFile, _appSettings.GreetingVolume, cancelCondition, cancellationToken);
     }
 
-    private async Task PlayAsync(string fileName, CancellationToken cancellationToken)
+    private async Task PlayAsync(string fileName, float volume, CancellationToken cancellationToken)
     {
-        await PlayAsync(fileName, () => true, cancellationToken);
+        await PlayAsync(fileName, volume, () => false, cancellationToken);
     }
 
-    public async Task<bool> PlayAsync(string fileName, Func<bool> cancelCondition, CancellationToken cancellationToken)
+    private async Task<bool> PlayAsync(string fileName, float volume, Func<bool> cancelCondition, CancellationToken cancellationToken)
     {
         _logger.LogInformation("Start audio {fileName}", fileName);
         await using var audioFile = new AudioFileReader(fileName);
         using var outputDevice = _nSoundFactory.GetWaveOutEvent();
-        outputDevice.Volume = _appSettings.MasterVolume;
+        outputDevice.Volume = volume;
         outputDevice.Init(audioFile);
         outputDevice.Play();
         _logger.LogInformation("Wait until audio has finished playing");
