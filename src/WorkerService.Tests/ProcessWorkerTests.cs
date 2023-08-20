@@ -25,25 +25,52 @@ public class ProcessWorkerTests
         _worker = new ProcessWorker(logger, _appStatus, _audioOutput, _audioRecorder, _gpioAccess);
     }
 
+    [Fact]
+    public async Task ExecuteAsync_SetStatusAndPlayStartupSound()
+    {
+        // Arrange
+        var cancellationTokenSource = new CancellationTokenSource();
+        cancellationTokenSource.CancelAfter(TimeSpan.FromMilliseconds(200));
+
+        // Act
+        await _worker.StartAsync(cancellationTokenSource.Token);
+
+        // Assert
+        _appStatus.Mode.Should().Be(Mode.Ready);
+        await _audioOutput.Received(1).PlayStartupAsync(Arg.Any<CancellationToken>());
+    }
+
     [Theory]
     [InlineData(Mode.Initialising)]
     [InlineData(Mode.Ready)]
     [InlineData(Mode.Prompting)]
     [InlineData(Mode.Recording)]
     [InlineData(Mode.Playback)]
-    public async Task ExecuteAsync_ShouldNotThrowException(Mode mode)
+    public async Task SwitchModes_ShouldNotThrowErrors(Mode mode)
     {
         // Arrange
-        var cancellationTokenSource = new CancellationTokenSource();
-        cancellationTokenSource.CancelAfter(TimeSpan.FromMilliseconds(200));
         _appStatus.Mode.Returns(mode);
+        var cts = new CancellationTokenSource();
+        cts.CancelAfter(TimeSpan.FromMilliseconds(200));
 
         // Act
-        var act = () => _worker.StartAsync(cancellationTokenSource.Token);
+        var act = () => _worker.StartAsync(cts.Token);
 
         // Assert
         await act.Should().NotThrowAsync();
     }
+
+    [Fact]
+    public async Task SwitchModes_InvalidEnum_ThrowsArgumentOutOfRangeException()
+    {
+        // Act
+        var act = () => _worker.SwitchModes((Mode)99, CancellationToken.None);
+
+        // Assert
+        await act.Should().ThrowAsync<ArgumentOutOfRangeException>();
+    }
+
+    //TODO: Test process?
 
     [Theory]
     [InlineData(false, false, Mode.Ready)]

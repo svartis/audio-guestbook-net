@@ -42,7 +42,7 @@ public sealed class ProcessWorker : BackgroundService
         }
     }
 
-    private async Task SwitchModes(Mode mode, CancellationToken cancellationToken)
+    internal async Task SwitchModes(Mode mode, CancellationToken cancellationToken)
     {
         switch (mode)
         {

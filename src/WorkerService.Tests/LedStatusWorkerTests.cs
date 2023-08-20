@@ -42,7 +42,7 @@ public sealed class LedStatusWorkerTests
     }
 
     [Fact]
-    public async Task ExecuteAsync_Should_Set_GpioAccess_Properties2()
+    public async Task ExecuteAsync_InvalidEnum_ThrowsArgumentOutOfRangeException()
     {
         // Arrange
         _appStatus.Mode.Returns((Mode)99);
