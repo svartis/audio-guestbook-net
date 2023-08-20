@@ -2,6 +2,7 @@
 
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
+		<!-- This version was needed to be able to run the GpioController on windows -->
 		<TargetFramework>net7.0-windows10.0.22621.0</TargetFramework>
 		<TreatWarningsAsErrors>True</TreatWarningsAsErrors>
 	</PropertyGroup>
