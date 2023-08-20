@@ -46,7 +46,7 @@ public sealed class AudioRecorderTests
         var result = _service.GetLatestRecordingFilePath();
 
         // Assert
-        Path.GetFileName(result).Should().Be("startup.wav");
+        Path.GetFileName(result).Should().Be("beep.wav");
     }
 
     [Fact]

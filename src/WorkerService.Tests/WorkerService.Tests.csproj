@@ -10,14 +10,10 @@
 
 	<ItemGroup>
 	  <None Remove="Recordings\Latest\beep.wav" />
-	  <None Remove="Recordings\Latest\startup.wav" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <Content Include="Recordings\Latest\beep.wav">
-	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	  </Content>
-	  <Content Include="Recordings\Latest\startup.wav">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </Content>
 	</ItemGroup>

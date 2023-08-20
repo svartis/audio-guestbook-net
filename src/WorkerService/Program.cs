@@ -3,6 +3,7 @@ using System.Device.Gpio;
 using Microsoft.Extensions.Options;
 
 //TODO: Maximum timeout for recording?
+//TODO: Playback not working
 
 namespace AudioGuestbook.WorkerService;
 
