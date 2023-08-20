@@ -13,8 +13,8 @@ public sealed class WaveInEventMock : IWaveIn
     }
 
     public WaveFormat WaveFormat { get; set; } = new();
-    public event EventHandler<WaveInEventArgs>? DataAvailable;
-    public event EventHandler<StoppedEventArgs>? RecordingStopped;
+    public event EventHandler<WaveInEventArgs>? DataAvailable = (sender, args) => { };
+    public event EventHandler<StoppedEventArgs>? RecordingStopped = (sender, args) => { };
 
     public void Dispose()
     {
@@ -22,7 +22,7 @@ public sealed class WaveInEventMock : IWaveIn
         GC.SuppressFinalize(this);
     }
 
-    private void Dispose(bool disposing)
+    private static void Dispose(bool disposing)
     {
         if (disposing)
         {

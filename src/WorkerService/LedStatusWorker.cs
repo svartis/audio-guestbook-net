@@ -25,7 +25,7 @@ public sealed class LedStatusWorker : BackgroundService
         }
     }
 
-    internal void SwitchLeds(Mode mode)
+    private void SwitchLeds(Mode mode)
     {
         switch (mode)
         {

@@ -50,7 +50,7 @@ public sealed class WaveOutEventMock : IWavePlayer, IWavePosition
 
     WaveFormat IWavePlayer.OutputWaveFormat { get; } = new();
 
-    public event EventHandler<StoppedEventArgs>? PlaybackStopped;
+    public event EventHandler<StoppedEventArgs>? PlaybackStopped = (sender, args) => { };
 
     public void Dispose()
     {
@@ -58,7 +58,7 @@ public sealed class WaveOutEventMock : IWavePlayer, IWavePosition
         GC.SuppressFinalize(this);
     }
 
-    private void Dispose(bool disposing)
+    private static void Dispose(bool disposing)
     {
         if (disposing)
         {

@@ -59,12 +59,11 @@ public sealed class AudioRecorder : IAudioRecorder
             _sourceStream.Dispose();
             _sourceStream = null;
         }
-        if (_waveWriter == null)
+        if (_waveWriter != null)
         {
-            return;
+            _waveWriter.Dispose();
+            _waveWriter = null;
         }
-        _waveWriter.Dispose();
-        _waveWriter = null;
     }
 
     public string? GetLatestRecordingFilePath()

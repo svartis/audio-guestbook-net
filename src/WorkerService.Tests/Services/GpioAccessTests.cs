@@ -23,8 +23,8 @@ public sealed class GpioAccessTests
     {
         // Arrange
         _gpioController.OpenPin(pinNumber, PinMode.Output);
-        _gpioController.Write(pinNumber, pinHigh ? PinValue.High : PinValue.Low); 
-        
+        _gpioController.Write(pinNumber, pinHigh ? PinValue.High : PinValue.Low);
+
         // Act
         var result = _gpioAccess.HandsetLifted;
 
@@ -55,7 +55,7 @@ public sealed class GpioAccessTests
     {
         // Arrange
         _gpioController.OpenPin(pinNumber, PinMode.Output);
-        _gpioController.Write(pinNumber, pinHigh ? PinValue.High : PinValue.Low);
+        _gpioAccess.GreenLedOn = pinHigh == PinValue.High;
 
         // Act
         var result = _gpioAccess.GreenLedOn;
@@ -71,7 +71,7 @@ public sealed class GpioAccessTests
     {
         // Arrange
         _gpioController.OpenPin(pinNumber, PinMode.Output);
-        _gpioController.Write(pinNumber, pinHigh ? PinValue.High : PinValue.Low);
+        _gpioAccess.YellowLedOn = pinHigh == PinValue.High;
 
         // Act
         var result = _gpioAccess.YellowLedOn;
@@ -87,12 +87,22 @@ public sealed class GpioAccessTests
     {
         // Arrange
         _gpioController.OpenPin(pinNumber, PinMode.Output);
-        _gpioController.Write(pinNumber, pinHigh ? PinValue.High : PinValue.Low);
+        _gpioAccess.RedLedOn = pinHigh == PinValue.High;
 
         // Act
         var result = _gpioAccess.RedLedOn;
 
         // Assert
         result.Should().Be(expectedResult);
+    }
+
+    [Fact]
+    public void Dispose_Test()
+    {
+        // Act
+        var act = () => _gpioController.Dispose();
+
+        // Assert
+        act.Should().NotThrow();
     }
 }

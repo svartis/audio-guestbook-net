@@ -1,6 +1,7 @@
 ﻿using AudioGuestbook.WorkerService.Services;
 using NSubstitute;
 using AudioGuestbook.WorkerService.Enums;
+using FluentAssertions.Equivalency;
 
 namespace AudioGuestbook.WorkerService.Tests;
 
@@ -24,13 +25,15 @@ public sealed class LedStatusWorkerTests
     [InlineData(Mode.Prompting, false, true, false)]
     [InlineData(Mode.Recording, false, false, true)]
     [InlineData(Mode.Playback, false, true, false)]
-    public void SwitchLeds_Should_Set_GpioAccess_Properties(Mode mode, bool greenLedOn, bool yellowLedOn, bool redLedOn)
+    public void ExecuteAsync_Should_Set_GpioAccess_Properties(Mode mode, bool greenLedOn, bool yellowLedOn, bool redLedOn)
     {
         // Arrange
         _appStatus.Mode.Returns(mode);
+        var cts = new CancellationTokenSource();
+        cts.CancelAfter(TimeSpan.FromMilliseconds(100));
 
         // Act
-        _worker.SwitchLeds(mode);
+        _worker.StartAsync(cts.Token);
 
         // Assert
         _gpioAccess.Received().GreenLedOn = greenLedOn;
