@@ -110,13 +110,9 @@ public sealed class ProcessWorker : BackgroundService
             return;
         }
 
-        // Debug message
-        _logger.LogInformation("Starting Recording");
-
         // PlayAsync the tone sound effect
         await _audioOutput.PlayBeepAsync(cancellationToken);
 
-        _logger.LogInformation("Start the recording function");
         _audioRecorder.Start();
         _appStatus.Mode = Mode.Recording;
     }
@@ -126,8 +122,6 @@ public sealed class ProcessWorker : BackgroundService
         // Handset is replaced
         if (!_gpioAccess.HandsetLifted)
         {
-            // Debug log
-            _logger.LogInformation("Stopping Recording");
             // Stop recording
             _audioRecorder.Stop();
             // PlayAsync audio tone to confirm recording has ended

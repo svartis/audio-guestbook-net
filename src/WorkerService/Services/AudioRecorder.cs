@@ -11,13 +11,15 @@ public interface IAudioRecorder
 
 public sealed class AudioRecorder : IAudioRecorder
 {
+    private readonly ILogger<AudioRecorder> _logger;
     private readonly INSoundFactory _nSoundFactory;
     private readonly AppSettings _appSettings;
     private IWaveIn? _sourceStream;
     private WaveFileWriter? _waveWriter;
 
-    public AudioRecorder(INSoundFactory nSoundFactory, AppSettings appSettings)
+    public AudioRecorder(ILogger<AudioRecorder> logger, INSoundFactory nSoundFactory, AppSettings appSettings)
     {
+        _logger = logger;
         _nSoundFactory = nSoundFactory;
         _appSettings = appSettings;
     }
@@ -34,11 +36,13 @@ public sealed class AudioRecorder : IAudioRecorder
             .Replace(":", "");
 
         _waveWriter = new WaveFileWriter(Path.Combine(_appSettings.AudioRecordingPath, filename), _sourceStream.WaveFormat);
+        _logger.LogInformation("Starting Recording");
         _sourceStream.StartRecording();
     }
 
     public void Stop()
     {
+        _logger.LogInformation("Stop Recording");
         if (_sourceStream != null)
         {
             _sourceStream.StopRecording();

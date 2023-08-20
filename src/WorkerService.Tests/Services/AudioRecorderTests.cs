@@ -1,21 +1,23 @@
 ﻿using AudioGuestbook.WorkerService.Services;
 using AudioGuestbook.WorkerService.Tests.Mocks;
 using FluentAssertions;
+using Microsoft.Extensions.Logging;
 using NSubstitute;
 
 namespace AudioGuestbook.WorkerService.Tests.Services;
 
-public class AudioRecorderTests
+public sealed class AudioRecorderTests
 {
     private readonly IAudioRecorder _service;
     private readonly AppSettings _appSettings;
 
     public AudioRecorderTests()
     {
+        var logger = Substitute.For<ILogger<AudioRecorder>>();
         var nSoundFactory = Substitute.For<INSoundFactory>();
         nSoundFactory.GetWaveInEvent().Returns(new WaveInEventMock());
         _appSettings = new AppSettings();
-        _service = new AudioRecorder(nSoundFactory, _appSettings);
+        _service = new AudioRecorder(logger, nSoundFactory, _appSettings);
     }
 
     [Fact]

@@ -2,10 +2,8 @@ using AudioGuestbook.WorkerService.Services;
 using System.Device.Gpio;
 using Microsoft.Extensions.Options;
 
-//TODO: Seal all classes
 //TODO: Create collected settings
 //TODO: ReadMe
-//TODO: Tests
 //TODO: Fritzing diagram 
 //TODO: Timeout for recording
 

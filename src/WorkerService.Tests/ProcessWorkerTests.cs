@@ -6,7 +6,7 @@ using Microsoft.Extensions.Logging;
 
 namespace AudioGuestbook.WorkerService.Tests;
 
-public class ProcessWorkerTests
+public sealed class ProcessWorkerTests
 {
     private readonly IAppStatus _appStatus;
     private readonly IAudioOutput _audioOutput;
@@ -48,13 +48,8 @@ public class ProcessWorkerTests
     [InlineData(Mode.Playback)]
     public async Task SwitchModes_ShouldNotThrowErrors(Mode mode)
     {
-        // Arrange
-        _appStatus.Mode.Returns(mode);
-        var cts = new CancellationTokenSource();
-        cts.CancelAfter(TimeSpan.FromMilliseconds(200));
-
         // Act
-        var act = () => _worker.StartAsync(cts.Token);
+        var act = () => _worker.SwitchModes(mode, CancellationToken.None);
 
         // Assert
         await act.Should().NotThrowAsync();
@@ -69,8 +64,6 @@ public class ProcessWorkerTests
         // Assert
         await act.Should().ThrowAsync<ArgumentOutOfRangeException>();
     }
-
-    //TODO: Test process?
 
     [Theory]
     [InlineData(false, false, Mode.Ready)]
@@ -90,6 +83,34 @@ public class ProcessWorkerTests
         // Assert
         _appStatus.Mode.Should().Be(expectedMode);
     }
+
+    [Theory]
+    [InlineData(false, Mode.Recording)]
+    [InlineData(true, Mode.Initialising)]
+    public async Task ModePrompting_Tests(bool greetingCanceled, Mode expectedMode)
+    {
+        // Arrange
+        _audioOutput
+            .PlayGreetingAsync(Arg.Any<Func<bool>>(), Arg.Any<CancellationToken>())
+            .Returns(greetingCanceled);
+
+        // Act
+        await _worker.ModePrompting(CancellationToken.None);
+
+        // Assert
+        _appStatus.Mode.Should().Be(expectedMode);
+        if (greetingCanceled)
+        {
+            await _audioOutput.Received(0).PlayBeepAsync(Arg.Any<CancellationToken>());
+            _audioRecorder.Received(0).Start();
+        }
+        else
+        {
+            await _audioOutput.Received(1).PlayBeepAsync(Arg.Any<CancellationToken>());
+            _audioRecorder.Received(1).Start();
+        }
+    }
+
 
     [Theory]
     [InlineData(false, Mode.Ready)]
