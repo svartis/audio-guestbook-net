@@ -2,17 +2,20 @@
 using FluentAssertions;
 using Microsoft.Extensions.Logging;
 using NSubstitute;
+using WaveOutEventMock = AudioGuestbook.WorkerService.Tests.Mocks.WaveOutEventMock;
 
 namespace AudioGuestbook.WorkerService.Tests.Services;
 
-public class AudioOutputTests
+public sealed class AudioOutputTests
 {
-    private readonly AudioOutput _service;
+    private readonly IAudioOutput _service;
 
     public AudioOutputTests()
     {
         var logger = Substitute.For<ILogger<AudioOutput>>();
-        _service = new AudioOutput(logger);
+        var nSoundFactory = Substitute.For<INSoundFactory>();
+        nSoundFactory.GetWaveOutEvent().Returns(new WaveOutEventMock());
+        _service = new AudioOutput(logger, nSoundFactory);
     }
 
     [Fact]
@@ -33,5 +36,25 @@ public class AudioOutputTests
 
         // Assert
         await act.Should().NotThrowAsync();
+    }
+
+    [Fact]
+    public async Task PlayGreetingAsync_Success_Test()
+    {
+        // Act
+        var result = await _service.PlayGreetingAsync(() => true, CancellationToken.None);
+
+        // Assert
+        result.Should().BeTrue();
+    }
+
+    [Fact]
+    public async Task PlayGreetingAsync_Cancel_Test()
+    {
+        // Act
+        var result = await _service.PlayGreetingAsync(() => false, CancellationToken.None);
+
+        // Assert
+        result.Should().BeFalse();
     }
 }

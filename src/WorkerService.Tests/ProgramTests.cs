@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace AudioGuestbook.WorkerService.Tests;
 
-public class ProgramTests
+public sealed class ProgramTests
 {
     [Fact]
     public void Program_CreateHostBuilder_HasRequiredServices()

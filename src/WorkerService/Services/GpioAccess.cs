@@ -15,24 +15,24 @@ public sealed class GpioAccess : IGpioAccess, IDisposable
 {
     private readonly GpioController _gpioController;
     
-    private const int HandsetPinNumber = 5;
+    internal const int HandsetPinNumber = 5;
     private readonly GpioPin _handsetGpioPin;
 
-    private const int PlaybackPinNumber = 6;
+    internal const int PlaybackPinNumber = 6;
     private readonly GpioPin _playbackGpioPin;
 
-    private const int GreenLedPinNumber = 18;
+    internal const int GreenLedPinNumber = 18;
     private readonly GpioPin _greenLedGpioPin;
 
-    private const int YellowLedPinNumber = 24;
+    internal const int YellowLedPinNumber = 24;
     private readonly GpioPin _yellowLedGpioPin;
 
-    private const int RedLedPinNumber = 25;
+    internal const int RedLedPinNumber = 25;
     private readonly GpioPin _redLedGpioPin;
 
-    public GpioAccess()
+    public GpioAccess(GpioController gpioController)
     {
-        _gpioController = new GpioController();
+        _gpioController = gpioController;
 
         _handsetGpioPin = _gpioController.OpenPin(HandsetPinNumber, PinMode.InputPullUp);
         _playbackGpioPin = _gpioController.OpenPin(PlaybackPinNumber, PinMode.InputPullUp);

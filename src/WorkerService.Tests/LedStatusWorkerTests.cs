@@ -4,7 +4,7 @@ using AudioGuestbook.WorkerService.Enums;
 
 namespace AudioGuestbook.WorkerService.Tests;
 
-public class LedStatusWorkerTests
+public sealed class LedStatusWorkerTests
 {
     private readonly IAppStatus _appStatus;
     private readonly IGpioAccess _gpioAccess;
@@ -23,7 +23,7 @@ public class LedStatusWorkerTests
     [InlineData(Mode.Ready, true, false, false)]
     [InlineData(Mode.Prompting, false, true, false)]
     [InlineData(Mode.Recording, false, false, true)]
-    [InlineData(Mode.Playing, false, true, false)]
+    [InlineData(Mode.Playback, false, true, false)]
     public void SwitchLeds_Should_Set_GpioAccess_Properties(Mode mode, bool greenLedOn, bool yellowLedOn, bool redLedOn)
     {
         // Arrange

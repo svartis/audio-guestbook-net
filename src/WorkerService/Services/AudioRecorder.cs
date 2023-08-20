@@ -15,23 +15,15 @@ public sealed class AudioRecorder : IAudioRecorder
     private WaveFileWriter? _waveWriter;
 
     private const string FilePath = @"c:\Temp\Recordings";
+    private const int Rate = 44100;
+    private const int Bits = 16;
+    private const int Channels = 1;
 
     public void Start()
     {
-        // TODO: Cleanup
-        int inputDeviceIndex = -1;
-        for (var n = -1; n < WaveIn.DeviceCount; n++)
-        {
-            var caps = WaveIn.GetCapabilities(n);
-            Console.WriteLine($"{n}: {caps.ProductName}");
-            inputDeviceIndex = n;
-        }
-
-        //TODO: Set same as other solution
         _sourceStream = new WaveInEvent
         {
-            DeviceNumber = inputDeviceIndex,
-            WaveFormat = new WaveFormat(44100, WaveIn.GetCapabilities(inputDeviceIndex).Channels)
+            WaveFormat = new WaveFormat(Rate, Bits, Channels)
         };
 
         _sourceStream.DataAvailable += SourceStreamDataAvailable;
@@ -78,10 +70,7 @@ public sealed class AudioRecorder : IAudioRecorder
     public string? GetLatestRecordingFilePath()
     {
         var directory = new DirectoryInfo(FilePath);
-        var pattern = "*.wav";
-        var myFile = directory.GetFiles(pattern)
-            .OrderByDescending(f => f.LastWriteTime)
-            .FirstOrDefault();
-        return myFile?.FullName;
+        var fileInfo = directory.GetFiles("*.wav").MaxBy(f => f.LastWriteTime);
+        return fileInfo?.FullName;
     }
 }

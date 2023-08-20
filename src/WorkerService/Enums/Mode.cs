@@ -6,5 +6,5 @@ public enum Mode
     Ready,
     Prompting,
     Recording,
-    Playing
+    Playback
 }

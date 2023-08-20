@@ -1,0 +1,844 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CoverageSession>
+  <Summary numSequencePoints="273" visitedSequencePoints="103" numBranchPoints="62" visitedBranchPoints="10" sequenceCoverage="37.72" branchCoverage="16.12" maxCyclomaticComplexity="85" minCyclomaticComplexity="85" visitedClasses="11" numClasses="17" visitedMethods="22" numMethods="37" />
+  <Modules>
+    <Module hash="396965FA-060B-479A-83CA-5AE8D61F58CE">
+      <ModulePath>AudioGuestbook.WorkerService.dll</ModulePath>
+      <ModuleTime>2023-08-20T12:15:24</ModuleTime>
+      <ModuleName>AudioGuestbook.WorkerService</ModuleName>
+      <Files>
+        <File uid="1" fullPath="C:\code\svartis\audio-guestbook-net\src\WorkerService\LedStatusWorker.cs" />
+        <File uid="2" fullPath="C:\code\svartis\audio-guestbook-net\src\WorkerService\ProcessWorker.cs" />
+        <File uid="3" fullPath="C:\code\svartis\audio-guestbook-net\src\WorkerService\Program.cs" />
+        <File uid="4" fullPath="C:\code\svartis\audio-guestbook-net\src\WorkerService\Services\AppStatus.cs" />
+        <File uid="5" fullPath="C:\code\svartis\audio-guestbook-net\src\WorkerService\Services\AudioOutput.cs" />
+        <File uid="6" fullPath="C:\code\svartis\audio-guestbook-net\src\WorkerService\Services\AudioRecorder.cs" />
+        <File uid="7" fullPath="C:\code\svartis\audio-guestbook-net\src\WorkerService\Services\GpioAccess.cs" />
+        <File uid="8" fullPath="C:\code\svartis\audio-guestbook-net\src\WorkerService\Services\NSoundFactory.cs" />
+      </Files>
+      <Classes>
+        <Class>
+          <Summary numSequencePoints="22" visitedSequencePoints="21" numBranchPoints="6" visitedBranchPoints="5" sequenceCoverage="95.45" branchCoverage="83.33" maxCyclomaticComplexity="6" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="3" numMethods="3" />
+          <FullName>AudioGuestbook.WorkerService.LedStatusWorker</FullName>
+          <Methods>
+            <Method cyclomaticComplexity="6" nPathComplexity="6" sequenceCoverage="91.66" branchCoverage="83.33" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="12" visitedSequencePoints="11" numBranchPoints="6" visitedBranchPoints="5" sequenceCoverage="91.66" branchCoverage="83.33" maxCyclomaticComplexity="6" minCyclomaticComplexity="6" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void AudioGuestbook.WorkerService.LedStatusWorker::SwitchLeds(AudioGuestbook.WorkerService.Enums.Mode)</Name>
+              <FileRef uid="1" />
+              <SequencePoints>
+                <SequencePoint vc="5" uspid="29" ordinal="0" sl="29" sc="1" el="29" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="5" uspid="30" ordinal="1" sl="30" sc="1" el="30" ec="2" bec="6" bev="5" fileid="1" />
+                <SequencePoint vc="1" uspid="33" ordinal="2" sl="33" sc="1" el="33" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="1" uspid="34" ordinal="3" sl="34" sc="1" el="34" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="1" uspid="36" ordinal="4" sl="36" sc="1" el="36" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="1" uspid="37" ordinal="5" sl="37" sc="1" el="37" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="2" uspid="40" ordinal="6" sl="40" sc="1" el="40" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="2" uspid="41" ordinal="7" sl="41" sc="1" el="41" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="1" uspid="43" ordinal="8" sl="43" sc="1" el="43" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="1" uspid="44" ordinal="9" sl="44" sc="1" el="44" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="0" uspid="46" ordinal="10" sl="46" sc="1" el="46" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="5" uspid="48" ordinal="11" sl="48" sc="1" el="48" ec="2" bec="0" bev="0" fileid="1" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="1" uspid="30" ordinal="1" path="1" offset="6" offsetend="33" sl="30" fileid="1" />
+                <BranchPoint vc="1" uspid="30" ordinal="2" path="2" offset="6" offsetend="45" sl="30" fileid="1" />
+                <BranchPoint vc="2" uspid="30" ordinal="3" path="3" offset="6" offsetend="57" sl="30" fileid="1" />
+                <BranchPoint vc="2" uspid="30" ordinal="5" path="5" offset="6" offsetend="57" sl="30" fileid="1" />
+                <BranchPoint vc="1" uspid="30" ordinal="4" path="4" offset="6" offsetend="69" sl="30" fileid="1" />
+                <BranchPoint vc="0" uspid="30" ordinal="0" path="0" offset="6" offsetend="81" sl="30" fileid="1" />
+              </BranchPoints>
+              <MethodPoint vc="11" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="29" ec="1" el="48" bec="0" bev="0" fileid="1" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="5" visitedSequencePoints="5" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void AudioGuestbook.WorkerService.LedStatusWorker::SetLedLights(System.Boolean,System.Boolean,System.Boolean)</Name>
+              <FileRef uid="1" />
+              <SequencePoints>
+                <SequencePoint vc="5" uspid="51" ordinal="0" sl="51" sc="1" el="51" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="5" uspid="52" ordinal="1" sl="52" sc="1" el="52" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="5" uspid="53" ordinal="2" sl="53" sc="1" el="53" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="5" uspid="54" ordinal="3" sl="54" sc="1" el="54" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="5" uspid="55" ordinal="4" sl="55" sc="1" el="55" ec="2" bec="0" bev="0" fileid="1" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="5" uspid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="51" ec="1" el="55" bec="0" bev="0" fileid="1" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="100" branchCoverage="100" isConstructor="True" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="5" visitedSequencePoints="5" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void AudioGuestbook.WorkerService.LedStatusWorker::.ctor(AudioGuestbook.WorkerService.Services.IAppStatus,AudioGuestbook.WorkerService.Services.IGpioAccess)</Name>
+              <FileRef uid="1" />
+              <SequencePoints>
+                <SequencePoint vc="5" uspid="11" ordinal="0" sl="11" sc="1" el="11" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="5" uspid="12" ordinal="1" sl="12" sc="1" el="12" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="5" uspid="13" ordinal="2" sl="13" sc="1" el="13" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="5" uspid="14" ordinal="3" sl="14" sc="1" el="14" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="5" uspid="15" ordinal="4" sl="15" sc="1" el="15" ec="2" bec="0" bev="0" fileid="1" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="5" uspid="0" p8:type="SequencePoint" ordinal="2" offset="2" sc="0" sl="11" ec="1" el="15" bec="0" bev="0" fileid="1" xmlns:p8="xsi" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="8" visitedSequencePoints="0" numBranchPoints="2" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="2" minCyclomaticComplexity="2" visitedClasses="0" numClasses="1" visitedMethods="0" numMethods="1" />
+          <FullName>AudioGuestbook.WorkerService.LedStatusWorker/&lt;ExecuteAsync&gt;d__3</FullName>
+          <Methods>
+            <Method cyclomaticComplexity="2" nPathComplexity="2" sequenceCoverage="0" branchCoverage="0" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="8" visitedSequencePoints="0" numBranchPoints="2" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="2" minCyclomaticComplexity="2" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void AudioGuestbook.WorkerService.LedStatusWorker/&lt;ExecuteAsync&gt;d__3::MoveNext()</Name>
+              <FileRef uid="1" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="18" ordinal="0" sl="18" sc="1" el="18" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="0" uspid="19" ordinal="1" sl="19" sc="1" el="19" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="0" uspid="21" ordinal="2" sl="21" sc="1" el="21" ec="2" bec="2" bev="0" fileid="1" />
+                <SequencePoint vc="0" uspid="22" ordinal="3" sl="22" sc="1" el="22" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="0" uspid="23" ordinal="4" sl="23" sc="1" el="23" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="0" uspid="24" ordinal="5" sl="24" sc="1" el="24" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="0" uspid="25" ordinal="6" sl="25" sc="1" el="25" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="0" uspid="26" ordinal="7" sl="26" sc="1" el="26" ec="2" bec="0" bev="0" fileid="1" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="0" uspid="21" ordinal="1" path="1" offset="181" offsetend="35" sl="21" fileid="1" />
+                <BranchPoint vc="0" uspid="21" ordinal="0" path="0" offset="181" offsetend="186" sl="21" fileid="1" />
+              </BranchPoints>
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="18" ec="1" el="26" bec="0" bev="0" fileid="1" xmlns:p8="xsi" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="29" visitedSequencePoints="0" numBranchPoints="8" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="4" minCyclomaticComplexity="1" visitedClasses="0" numClasses="1" visitedMethods="0" numMethods="3" />
+          <FullName>AudioGuestbook.WorkerService.ProcessWorker</FullName>
+          <Methods>
+            <Method cyclomaticComplexity="4" nPathComplexity="4" sequenceCoverage="0" branchCoverage="0" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="11" visitedSequencePoints="0" numBranchPoints="4" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="4" minCyclomaticComplexity="4" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Boolean AudioGuestbook.WorkerService.ProcessWorker::&lt;ExecuteAsync&gt;b__6_0()</Name>
+              <FileRef uid="2" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="68" ordinal="0" sl="68" sc="1" el="68" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="70" ordinal="1" sl="70" sc="1" el="70" ec="2" bec="2" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="71" ordinal="2" sl="71" sc="1" el="71" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="72" ordinal="3" sl="72" sc="1" el="72" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="73" ordinal="4" sl="73" sc="1" el="73" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="77" ordinal="5" sl="77" sc="1" el="77" ec="2" bec="2" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="78" ordinal="6" sl="78" sc="1" el="78" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="79" ordinal="7" sl="79" sc="1" el="79" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="80" ordinal="8" sl="80" sc="1" el="80" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="83" ordinal="9" sl="83" sc="1" el="83" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="84" ordinal="10" sl="84" sc="1" el="84" ec="2" bec="0" bev="0" fileid="2" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="0" uspid="70" ordinal="0" path="0" offset="17" offsetend="19" sl="70" fileid="2" />
+                <BranchPoint vc="0" uspid="70" ordinal="1" path="1" offset="17" offsetend="37" sl="70" fileid="2" />
+                <BranchPoint vc="0" uspid="77" ordinal="2" path="0" offset="50" offsetend="52" sl="77" fileid="2" />
+                <BranchPoint vc="0" uspid="77" ordinal="3" path="1" offset="50" offsetend="70" sl="77" fileid="2" />
+              </BranchPoints>
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="68" ec="1" el="84" bec="0" bev="0" fileid="2" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="4" nPathComplexity="4" sequenceCoverage="0" branchCoverage="0" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="6" visitedSequencePoints="0" numBranchPoints="4" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="4" minCyclomaticComplexity="4" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Boolean AudioGuestbook.WorkerService.ProcessWorker::&lt;ExecuteAsync&gt;b__6_1()</Name>
+              <FileRef uid="2" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="128" ordinal="0" sl="128" sc="1" el="128" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="130" ordinal="1" sl="130" sc="1" el="130" ec="2" bec="4" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="131" ordinal="2" sl="131" sc="1" el="131" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="132" ordinal="3" sl="132" sc="1" el="132" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="134" ordinal="4" sl="134" sc="1" el="134" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="135" ordinal="5" sl="135" sc="1" el="135" ec="2" bec="0" bev="0" fileid="2" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="0" uspid="130" ordinal="0" path="0" offset="12" offsetend="14" sl="130" fileid="2" />
+                <BranchPoint vc="0" uspid="130" ordinal="1" path="1" offset="12" offsetend="30" sl="130" fileid="2" />
+                <BranchPoint vc="0" uspid="130" ordinal="2" path="0" offset="33" offsetend="35" sl="130" fileid="2" />
+                <BranchPoint vc="0" uspid="130" ordinal="3" path="1" offset="33" offsetend="40" sl="130" fileid="2" />
+              </BranchPoints>
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="128" ec="1" el="135" bec="0" bev="0" fileid="2" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="0" branchCoverage="100" isConstructor="True" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="12" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void AudioGuestbook.WorkerService.ProcessWorker::.ctor(Microsoft.Extensions.Logging.ILogger`1&lt;AudioGuestbook.WorkerService.ProcessWorker&gt;,AudioGuestbook.WorkerService.Services.IAppStatus,AudioGuestbook.WorkerService.Services.IAudioOutput,AudioGuestbook.WorkerService.Services.IAudioRecorder,AudioGuestbook.WorkerService.Services.IGpioAccess)</Name>
+              <FileRef uid="2" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="15" ordinal="0" sl="15" sc="1" el="15" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="16" ordinal="1" sl="16" sc="1" el="16" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="17" ordinal="2" sl="17" sc="1" el="17" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="18" ordinal="3" sl="18" sc="1" el="18" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="19" ordinal="4" sl="19" sc="1" el="19" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="20" ordinal="5" sl="20" sc="1" el="20" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="21" ordinal="6" sl="21" sc="1" el="21" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="22" ordinal="7" sl="22" sc="1" el="22" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="23" ordinal="8" sl="23" sc="1" el="23" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="24" ordinal="9" sl="24" sc="1" el="24" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="25" ordinal="10" sl="25" sc="1" el="25" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="26" ordinal="11" sl="26" sc="1" el="26" ec="2" bec="0" bev="0" fileid="2" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="2" offset="2" sc="0" sl="15" ec="1" el="26" bec="0" bev="0" fileid="2" xmlns:p8="xsi" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="65" visitedSequencePoints="0" numBranchPoints="22" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="22" minCyclomaticComplexity="22" visitedClasses="0" numClasses="1" visitedMethods="0" numMethods="1" />
+          <FullName>AudioGuestbook.WorkerService.ProcessWorker/&lt;ExecuteAsync&gt;d__6</FullName>
+          <Methods>
+            <Method cyclomaticComplexity="22" nPathComplexity="22" sequenceCoverage="0" branchCoverage="0" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="65" visitedSequencePoints="0" numBranchPoints="22" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="22" minCyclomaticComplexity="22" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void AudioGuestbook.WorkerService.ProcessWorker/&lt;ExecuteAsync&gt;d__6::MoveNext()</Name>
+              <FileRef uid="2" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="29" ordinal="0" sl="29" sc="1" el="29" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="31" ordinal="1" sl="31" sc="1" el="31" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="34" ordinal="2" sl="34" sc="1" el="34" ec="2" bec="2" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="35" ordinal="3" sl="35" sc="1" el="35" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="38" ordinal="4" sl="38" sc="1" el="38" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="41" ordinal="5" sl="41" sc="1" el="41" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="43" ordinal="6" sl="43" sc="1" el="43" ec="2" bec="2" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="44" ordinal="7" sl="44" sc="1" el="44" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="45" ordinal="8" sl="45" sc="1" el="45" ec="2" bec="6" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="49" ordinal="9" sl="49" sc="1" el="49" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="51" ordinal="10" sl="51" sc="1" el="51" ec="2" bec="2" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="52" ordinal="11" sl="52" sc="1" el="52" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="53" ordinal="12" sl="53" sc="1" el="53" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="54" ordinal="13" sl="54" sc="1" el="54" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="55" ordinal="14" sl="55" sc="1" el="55" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="56" ordinal="15" sl="56" sc="1" el="56" ec="2" bec="2" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="57" ordinal="16" sl="57" sc="1" el="57" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="58" ordinal="17" sl="58" sc="1" el="58" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="59" ordinal="18" sl="59" sc="1" el="59" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="60" ordinal="19" sl="60" sc="1" el="60" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="61" ordinal="20" sl="61" sc="1" el="61" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="64" ordinal="21" sl="64" sc="1" el="64" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="67" ordinal="22" sl="67" sc="1" el="67" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="69" ordinal="23" sl="69" sc="1" el="69" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="74" ordinal="24" sl="74" sc="1" el="74" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="75" ordinal="25" sl="75" sc="1" el="75" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="76" ordinal="26" sl="76" sc="1" el="76" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="81" ordinal="27" sl="81" sc="1" el="81" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="82" ordinal="28" sl="82" sc="1" el="82" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="86" ordinal="29" sl="86" sc="1" el="86" ec="2" bec="2" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="87" ordinal="30" sl="87" sc="1" el="87" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="88" ordinal="31" sl="88" sc="1" el="88" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="92" ordinal="32" sl="92" sc="1" el="92" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="95" ordinal="33" sl="95" sc="1" el="95" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="97" ordinal="34" sl="97" sc="1" el="97" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="98" ordinal="35" sl="98" sc="1" el="98" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="99" ordinal="36" sl="99" sc="1" el="99" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="100" ordinal="37" sl="100" sc="1" el="100" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="103" ordinal="38" sl="103" sc="1" el="103" ec="2" bec="2" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="104" ordinal="39" sl="104" sc="1" el="104" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="106" ordinal="40" sl="106" sc="1" el="106" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="108" ordinal="41" sl="108" sc="1" el="108" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="110" ordinal="42" sl="110" sc="1" el="110" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="112" ordinal="43" sl="112" sc="1" el="112" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="113" ordinal="44" sl="113" sc="1" el="113" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="114" ordinal="45" sl="114" sc="1" el="114" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="117" ordinal="46" sl="117" sc="1" el="117" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="120" ordinal="47" sl="120" sc="1" el="120" ec="2" bec="2" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="121" ordinal="48" sl="121" sc="1" el="121" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="122" ordinal="49" sl="122" sc="1" el="122" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="123" ordinal="50" sl="123" sc="1" el="123" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="127" ordinal="51" sl="127" sc="1" el="127" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="129" ordinal="52" sl="129" sc="1" el="129" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="133" ordinal="53" sl="133" sc="1" el="133" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="137" ordinal="54" sl="137" sc="1" el="137" ec="2" bec="2" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="138" ordinal="55" sl="138" sc="1" el="138" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="139" ordinal="56" sl="139" sc="1" el="139" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="140" ordinal="57" sl="140" sc="1" el="140" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="144" ordinal="58" sl="144" sc="1" el="144" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="145" ordinal="59" sl="145" sc="1" el="145" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="147" ordinal="60" sl="147" sc="1" el="147" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="149" ordinal="61" sl="149" sc="1" el="149" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="152" ordinal="62" sl="152" sc="1" el="152" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="153" ordinal="63" sl="153" sc="1" el="153" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="154" ordinal="64" sl="154" sc="1" el="154" ec="2" bec="0" bev="0" fileid="2" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="0" uspid="34" ordinal="0" path="0" offset="142" offsetend="144" sl="34" fileid="2" />
+                <BranchPoint vc="0" uspid="34" ordinal="1" path="1" offset="142" offsetend="211" sl="34" fileid="2" />
+                <BranchPoint vc="0" uspid="43" ordinal="21" path="1" offset="1902" offsetend="463" sl="43" fileid="2" />
+                <BranchPoint vc="0" uspid="45" ordinal="4" path="2" offset="500" offsetend="535" sl="45" fileid="2" />
+                <BranchPoint vc="0" uspid="51" ordinal="8" path="0" offset="555" offsetend="557" sl="51" fileid="2" />
+                <BranchPoint vc="0" uspid="51" ordinal="9" path="1" offset="555" offsetend="606" sl="51" fileid="2" />
+                <BranchPoint vc="0" uspid="56" ordinal="10" path="0" offset="626" offsetend="628" sl="56" fileid="2" />
+                <BranchPoint vc="0" uspid="45" ordinal="5" path="3" offset="500" offsetend="680" sl="45" fileid="2" />
+                <BranchPoint vc="0" uspid="86" ordinal="12" path="0" offset="948" offsetend="950" sl="86" fileid="2" />
+                <BranchPoint vc="0" uspid="86" ordinal="13" path="1" offset="948" offsetend="956" sl="86" fileid="2" />
+                <BranchPoint vc="0" uspid="45" ordinal="6" path="4" offset="500" offsetend="1165" sl="45" fileid="2" />
+                <BranchPoint vc="0" uspid="103" ordinal="14" path="0" offset="1188" offsetend="1193" sl="103" fileid="2" />
+                <BranchPoint vc="0" uspid="45" ordinal="7" path="5" offset="500" offsetend="1377" sl="45" fileid="2" />
+                <BranchPoint vc="0" uspid="120" ordinal="16" path="0" offset="1414" offsetend="1416" sl="120" fileid="2" />
+                <BranchPoint vc="0" uspid="120" ordinal="17" path="1" offset="1414" offsetend="1440" sl="120" fileid="2" />
+                <BranchPoint vc="0" uspid="137" ordinal="18" path="0" offset="1605" offsetend="1607" sl="137" fileid="2" />
+                <BranchPoint vc="0" uspid="137" ordinal="19" path="1" offset="1605" offsetend="1631" sl="137" fileid="2" />
+                <BranchPoint vc="0" uspid="45" ordinal="2" path="0" offset="500" offsetend="1766" sl="45" fileid="2" />
+                <BranchPoint vc="0" uspid="45" ordinal="3" path="1" offset="500" offsetend="1772" sl="45" fileid="2" />
+                <BranchPoint vc="0" uspid="56" ordinal="11" path="1" offset="626" offsetend="1772" sl="56" fileid="2" />
+                <BranchPoint vc="0" uspid="103" ordinal="15" path="1" offset="1188" offsetend="1772" sl="103" fileid="2" />
+                <BranchPoint vc="0" uspid="43" ordinal="20" path="0" offset="1902" offsetend="1907" sl="43" fileid="2" />
+              </BranchPoints>
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="29" ec="1" el="154" bec="0" bev="0" fileid="2" xmlns:p8="xsi" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="12" visitedSequencePoints="11" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="91.66" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="1" />
+          <FullName>AudioGuestbook.WorkerService.Program</FullName>
+          <Methods>
+            <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="91.66" branchCoverage="100" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="12" visitedSequencePoints="11" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="91.66" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>Microsoft.Extensions.Hosting.IHostBuilder AudioGuestbook.WorkerService.Program::CreateHostBuilder(System.String[])</Name>
+              <FileRef uid="3" />
+              <SequencePoints>
+                <SequencePoint vc="1" uspid="23" ordinal="0" sl="23" sc="1" el="23" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="1" uspid="24" ordinal="1" sl="24" sc="1" el="24" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="1" uspid="25" ordinal="2" sl="25" sc="1" el="25" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="1" uspid="26" ordinal="3" sl="26" sc="1" el="26" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="1" uspid="27" ordinal="4" sl="27" sc="1" el="27" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="0" uspid="28" ordinal="5" sl="28" sc="1" el="28" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="1" uspid="29" ordinal="6" sl="29" sc="1" el="29" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="1" uspid="30" ordinal="7" sl="30" sc="1" el="30" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="1" uspid="31" ordinal="8" sl="31" sc="1" el="31" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="1" uspid="32" ordinal="9" sl="32" sc="1" el="32" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="1" uspid="33" ordinal="10" sl="33" sc="1" el="33" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="2" uspid="34" ordinal="11" sl="34" sc="1" el="34" ec="2" bec="0" bev="0" fileid="3" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="11" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="23" ec="1" el="34" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="4" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="1" visitedMethods="0" numMethods="1" />
+          <FullName>AudioGuestbook.WorkerService.Program/&lt;Main&gt;d__0</FullName>
+          <Methods>
+            <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="4" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void AudioGuestbook.WorkerService.Program/&lt;Main&gt;d__0::MoveNext()</Name>
+              <FileRef uid="3" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="17" ordinal="0" sl="17" sc="1" el="17" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="0" uspid="18" ordinal="1" sl="18" sc="1" el="18" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="0" uspid="19" ordinal="2" sl="19" sc="1" el="19" ec="2" bec="0" bev="0" fileid="3" />
+                <SequencePoint vc="0" uspid="20" ordinal="3" sl="20" sc="1" el="20" ec="2" bec="0" bev="0" fileid="3" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="17" ec="1" el="20" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="10" visitedSequencePoints="10" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="3" numMethods="3" />
+          <FullName>AudioGuestbook.WorkerService.Services.AppStatus</FullName>
+          <Methods>
+            <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>AudioGuestbook.WorkerService.Enums.Mode AudioGuestbook.WorkerService.Services.AppStatus::get_Mode()</Name>
+              <FileRef uid="4" />
+              <SequencePoints>
+                <SequencePoint vc="5" uspid="23" ordinal="0" sl="23" sc="1" el="23" ec="2" bec="0" bev="0" fileid="4" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="23" ec="1" el="23" bec="0" bev="0" fileid="4" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="False" isSetter="True" isStatic="True">
+              <Summary numSequencePoints="4" visitedSequencePoints="4" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void AudioGuestbook.WorkerService.Services.AppStatus::set_Mode(AudioGuestbook.WorkerService.Enums.Mode)</Name>
+              <FileRef uid="4" />
+              <SequencePoints>
+                <SequencePoint vc="5" uspid="25" ordinal="0" sl="25" sc="1" el="25" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="5" uspid="26" ordinal="1" sl="26" sc="1" el="26" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="5" uspid="27" ordinal="2" sl="27" sc="1" el="27" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="5" uspid="28" ordinal="3" sl="28" sc="1" el="28" ec="2" bec="0" bev="0" fileid="4" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="4" uspid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="25" ec="1" el="28" bec="0" bev="0" fileid="4" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="100" branchCoverage="100" isConstructor="True" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="5" visitedSequencePoints="5" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void AudioGuestbook.WorkerService.Services.AppStatus::.ctor(Microsoft.Extensions.Logging.ILogger`1&lt;AudioGuestbook.WorkerService.Services.AppStatus&gt;)</Name>
+              <FileRef uid="4" />
+              <SequencePoints>
+                <SequencePoint vc="6" uspid="14" ordinal="0" sl="14" sc="1" el="14" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="6" uspid="16" ordinal="1" sl="16" sc="1" el="16" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="6" uspid="17" ordinal="2" sl="17" sc="1" el="17" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="6" uspid="18" ordinal="3" sl="18" sc="1" el="18" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="6" uspid="19" ordinal="4" sl="19" sc="1" el="19" ec="2" bec="0" bev="0" fileid="4" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="5" uspid="0" p8:type="SequencePoint" ordinal="2" offset="2" sc="0" sl="14" ec="1" el="19" bec="0" bev="0" fileid="4" xmlns:p8="xsi" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="10" visitedSequencePoints="10" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="1" />
+          <FullName>AudioGuestbook.WorkerService.Services.AudioOutput</FullName>
+          <Methods>
+            <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="100" branchCoverage="100" isConstructor="True" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="10" visitedSequencePoints="10" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void AudioGuestbook.WorkerService.Services.AudioOutput::.ctor(Microsoft.Extensions.Logging.ILogger`1&lt;AudioGuestbook.WorkerService.Services.AudioOutput&gt;,AudioGuestbook.WorkerService.Services.INSoundFactory)</Name>
+              <FileRef uid="5" />
+              <SequencePoints>
+                <SequencePoint vc="4" uspid="22" ordinal="0" sl="22" sc="1" el="22" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="4" uspid="24" ordinal="1" sl="24" sc="1" el="24" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="4" uspid="25" ordinal="2" sl="25" sc="1" el="25" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="4" uspid="26" ordinal="3" sl="26" sc="1" el="26" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="4" uspid="27" ordinal="4" sl="27" sc="1" el="27" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="4" uspid="29" ordinal="5" sl="29" sc="1" el="29" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="4" uspid="30" ordinal="6" sl="30" sc="1" el="30" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="4" uspid="31" ordinal="7" sl="31" sc="1" el="31" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="4" uspid="32" ordinal="8" sl="32" sc="1" el="32" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="4" uspid="33" ordinal="9" sl="33" sc="1" el="33" ec="2" bec="0" bev="0" fileid="5" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="10" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="22" ec="1" el="33" bec="0" bev="0" fileid="5" xmlns:p8="xsi" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="1" />
+          <FullName>AudioGuestbook.WorkerService.Services.AudioOutput/&lt;&gt;c</FullName>
+          <Methods>
+            <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Boolean AudioGuestbook.WorkerService.Services.AudioOutput/&lt;&gt;c::&lt;PlayAsync&gt;b__10_0()</Name>
+              <FileRef uid="5" />
+              <SequencePoints>
+                <SequencePoint vc="4" uspid="52" ordinal="0" sl="52" sc="1" el="52" ec="2" bec="0" bev="0" fileid="5" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="52" ec="1" el="52" bec="0" bev="0" fileid="5" xmlns:p8="xsi" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="2" visitedSequencePoints="2" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="1" />
+          <FullName>AudioGuestbook.WorkerService.Services.AudioOutput/&lt;PlayAsync&gt;d__10</FullName>
+          <Methods>
+            <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="2" visitedSequencePoints="2" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void AudioGuestbook.WorkerService.Services.AudioOutput/&lt;PlayAsync&gt;d__10::MoveNext()</Name>
+              <FileRef uid="5" />
+              <SequencePoints>
+                <SequencePoint vc="2" uspid="51" ordinal="0" sl="51" sc="1" el="51" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="2" uspid="53" ordinal="1" sl="53" sc="1" el="53" ec="2" bec="0" bev="0" fileid="5" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="2" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="51" ec="1" el="53" bec="0" bev="0" fileid="5" xmlns:p8="xsi" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="21" visitedSequencePoints="21" numBranchPoints="4" visitedBranchPoints="4" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="4" minCyclomaticComplexity="4" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="1" />
+          <FullName>AudioGuestbook.WorkerService.Services.AudioOutput/&lt;PlayAsync&gt;d__11</FullName>
+          <Methods>
+            <Method cyclomaticComplexity="4" nPathComplexity="4" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="21" visitedSequencePoints="21" numBranchPoints="4" visitedBranchPoints="4" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="4" minCyclomaticComplexity="4" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void AudioGuestbook.WorkerService.Services.AudioOutput/&lt;PlayAsync&gt;d__11::MoveNext()</Name>
+              <FileRef uid="5" />
+              <SequencePoints>
+                <SequencePoint vc="4" uspid="56" ordinal="0" sl="56" sc="1" el="56" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="4" uspid="57" ordinal="1" sl="57" sc="1" el="57" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="4" uspid="58" ordinal="2" sl="58" sc="1" el="58" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="4" uspid="59" ordinal="3" sl="59" sc="1" el="59" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="4" uspid="60" ordinal="4" sl="60" sc="1" el="60" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="4" uspid="61" ordinal="5" sl="61" sc="1" el="61" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="4" uspid="62" ordinal="6" sl="62" sc="1" el="62" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="4" uspid="63" ordinal="7" sl="63" sc="1" el="63" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="5" uspid="64" ordinal="8" sl="64" sc="1" el="64" ec="2" bec="2" bev="2" fileid="5" />
+                <SequencePoint vc="4" uspid="65" ordinal="9" sl="65" sc="1" el="65" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="4" uspid="66" ordinal="10" sl="66" sc="1" el="66" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="4" uspid="67" ordinal="11" sl="67" sc="1" el="67" ec="2" bec="2" bev="2" fileid="5" />
+                <SequencePoint vc="3" uspid="68" ordinal="12" sl="68" sc="1" el="68" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="3" uspid="69" ordinal="13" sl="69" sc="1" el="69" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="3" uspid="70" ordinal="14" sl="70" sc="1" el="70" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="3" uspid="71" ordinal="15" sl="71" sc="1" el="71" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="1" uspid="74" ordinal="16" sl="74" sc="1" el="74" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="1" uspid="75" ordinal="17" sl="75" sc="1" el="75" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="1" uspid="76" ordinal="18" sl="76" sc="1" el="76" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="1" uspid="77" ordinal="19" sl="77" sc="1" el="77" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="4" uspid="78" ordinal="20" sl="78" sc="1" el="78" ec="2" bec="0" bev="0" fileid="5" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="4" uspid="64" ordinal="3" path="1" offset="433" offsetend="220" sl="64" fileid="5" />
+                <BranchPoint vc="3" uspid="67" ordinal="0" path="0" offset="246" offsetend="248" sl="67" fileid="5" />
+                <BranchPoint vc="1" uspid="67" ordinal="1" path="1" offset="246" offsetend="310" sl="67" fileid="5" />
+                <BranchPoint vc="1" uspid="64" ordinal="2" path="0" offset="433" offsetend="438" sl="64" fileid="5" />
+              </BranchPoints>
+              <MethodPoint vc="21" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="56" ec="1" el="78" bec="0" bev="0" fileid="5" xmlns:p8="xsi" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="3" visitedSequencePoints="3" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="1" />
+          <FullName>AudioGuestbook.WorkerService.Services.AudioOutput/&lt;PlayBeepAsync&gt;d__8</FullName>
+          <Methods>
+            <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="3" visitedSequencePoints="3" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void AudioGuestbook.WorkerService.Services.AudioOutput/&lt;PlayBeepAsync&gt;d__8::MoveNext()</Name>
+              <FileRef uid="5" />
+              <SequencePoints>
+                <SequencePoint vc="1" uspid="41" ordinal="0" sl="41" sc="1" el="41" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="1" uspid="42" ordinal="1" sl="42" sc="1" el="42" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="1" uspid="43" ordinal="2" sl="43" sc="1" el="43" ec="2" bec="0" bev="0" fileid="5" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="3" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="41" ec="1" el="43" bec="0" bev="0" fileid="5" xmlns:p8="xsi" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="3" visitedSequencePoints="3" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="1" />
+          <FullName>AudioGuestbook.WorkerService.Services.AudioOutput/&lt;PlayGreetingAsync&gt;d__9</FullName>
+          <Methods>
+            <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="3" visitedSequencePoints="3" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void AudioGuestbook.WorkerService.Services.AudioOutput/&lt;PlayGreetingAsync&gt;d__9::MoveNext()</Name>
+              <FileRef uid="5" />
+              <SequencePoints>
+                <SequencePoint vc="2" uspid="46" ordinal="0" sl="46" sc="1" el="46" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="2" uspid="47" ordinal="1" sl="47" sc="1" el="47" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="2" uspid="48" ordinal="2" sl="48" sc="1" el="48" ec="2" bec="0" bev="0" fileid="5" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="3" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="46" ec="1" el="48" bec="0" bev="0" fileid="5" xmlns:p8="xsi" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="3" visitedSequencePoints="3" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="1" />
+          <FullName>AudioGuestbook.WorkerService.Services.AudioOutput/&lt;PlayStartupAsync&gt;d__7</FullName>
+          <Methods>
+            <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="3" visitedSequencePoints="3" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void AudioGuestbook.WorkerService.Services.AudioOutput/&lt;PlayStartupAsync&gt;d__7::MoveNext()</Name>
+              <FileRef uid="5" />
+              <SequencePoints>
+                <SequencePoint vc="1" uspid="36" ordinal="0" sl="36" sc="1" el="36" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="1" uspid="37" ordinal="1" sl="37" sc="1" el="37" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="1" uspid="38" ordinal="2" sl="38" sc="1" el="38" ec="2" bec="0" bev="0" fileid="5" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="3" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="36" ec="1" el="38" bec="0" bev="0" fileid="5" xmlns:p8="xsi" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="49" visitedSequencePoints="0" numBranchPoints="12" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="4" minCyclomaticComplexity="2" visitedClasses="0" numClasses="1" visitedMethods="0" numMethods="4" />
+          <FullName>AudioGuestbook.WorkerService.Services.AudioRecorder</FullName>
+          <Methods>
+            <Method cyclomaticComplexity="4" nPathComplexity="4" sequenceCoverage="0" branchCoverage="0" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="24" visitedSequencePoints="0" numBranchPoints="4" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="4" minCyclomaticComplexity="4" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void AudioGuestbook.WorkerService.Services.AudioRecorder::Start()</Name>
+              <FileRef uid="6" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="20" ordinal="0" sl="20" sc="1" el="20" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="22" ordinal="1" sl="22" sc="1" el="22" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="23" ordinal="2" sl="23" sc="1" el="23" ec="2" bec="2" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="24" ordinal="3" sl="24" sc="1" el="24" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="25" ordinal="4" sl="25" sc="1" el="25" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="26" ordinal="5" sl="26" sc="1" el="26" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="27" ordinal="6" sl="27" sc="1" el="27" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="28" ordinal="7" sl="28" sc="1" el="28" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="31" ordinal="8" sl="31" sc="1" el="31" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="32" ordinal="9" sl="32" sc="1" el="32" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="33" ordinal="10" sl="33" sc="1" el="33" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="34" ordinal="11" sl="34" sc="1" el="34" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="35" ordinal="12" sl="35" sc="1" el="35" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="37" ordinal="13" sl="37" sc="1" el="37" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="39" ordinal="14" sl="39" sc="1" el="39" ec="2" bec="2" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="40" ordinal="15" sl="40" sc="1" el="40" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="41" ordinal="16" sl="41" sc="1" el="41" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="42" ordinal="17" sl="42" sc="1" el="42" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="44" ordinal="18" sl="44" sc="1" el="44" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="45" ordinal="19" sl="45" sc="1" el="45" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="46" ordinal="20" sl="46" sc="1" el="46" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="48" ordinal="21" sl="48" sc="1" el="48" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="49" ordinal="22" sl="49" sc="1" el="49" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="50" ordinal="23" sl="50" sc="1" el="50" ec="2" bec="0" bev="0" fileid="6" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="0" uspid="23" ordinal="1" path="1" offset="93" offsetend="7" sl="23" fileid="6" />
+                <BranchPoint vc="0" uspid="23" ordinal="0" path="0" offset="93" offsetend="95" sl="23" fileid="6" />
+                <BranchPoint vc="0" uspid="39" ordinal="2" path="0" offset="187" offsetend="189" sl="39" fileid="6" />
+                <BranchPoint vc="0" uspid="39" ordinal="3" path="1" offset="187" offsetend="202" sl="39" fileid="6" />
+              </BranchPoints>
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="20" ec="1" el="50" bec="0" bev="0" fileid="6" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="2" nPathComplexity="2" sequenceCoverage="0" branchCoverage="0" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="7" visitedSequencePoints="0" numBranchPoints="2" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="2" minCyclomaticComplexity="2" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void AudioGuestbook.WorkerService.Services.AudioRecorder::SourceStreamDataAvailable(System.Object,NAudio.Wave.WaveInEventArgs)</Name>
+              <FileRef uid="6" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="53" ordinal="0" sl="53" sc="1" el="53" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="54" ordinal="1" sl="54" sc="1" el="54" ec="2" bec="2" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="55" ordinal="2" sl="55" sc="1" el="55" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="56" ordinal="3" sl="56" sc="1" el="56" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="58" ordinal="4" sl="58" sc="1" el="58" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="59" ordinal="5" sl="59" sc="1" el="59" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="60" ordinal="6" sl="60" sc="1" el="60" ec="2" bec="0" bev="0" fileid="6" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="0" uspid="54" ordinal="0" path="0" offset="12" offsetend="14" sl="54" fileid="6" />
+                <BranchPoint vc="0" uspid="54" ordinal="1" path="1" offset="12" offsetend="17" sl="54" fileid="6" />
+              </BranchPoints>
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="53" ec="1" el="60" bec="0" bev="0" fileid="6" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="4" nPathComplexity="4" sequenceCoverage="0" branchCoverage="0" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="13" visitedSequencePoints="0" numBranchPoints="4" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="4" minCyclomaticComplexity="4" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void AudioGuestbook.WorkerService.Services.AudioRecorder::Stop()</Name>
+              <FileRef uid="6" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="63" ordinal="0" sl="63" sc="1" el="63" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="64" ordinal="1" sl="64" sc="1" el="64" ec="2" bec="2" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="65" ordinal="2" sl="65" sc="1" el="65" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="66" ordinal="3" sl="66" sc="1" el="66" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="67" ordinal="4" sl="67" sc="1" el="67" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="68" ordinal="5" sl="68" sc="1" el="68" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="69" ordinal="6" sl="69" sc="1" el="69" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="70" ordinal="7" sl="70" sc="1" el="70" ec="2" bec="2" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="71" ordinal="8" sl="71" sc="1" el="71" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="72" ordinal="9" sl="72" sc="1" el="72" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="74" ordinal="10" sl="74" sc="1" el="74" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="75" ordinal="11" sl="75" sc="1" el="75" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="76" ordinal="12" sl="76" sc="1" el="76" ec="2" bec="0" bev="0" fileid="6" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="0" uspid="64" ordinal="0" path="0" offset="12" offsetend="14" sl="64" fileid="6" />
+                <BranchPoint vc="0" uspid="64" ordinal="1" path="1" offset="12" offsetend="47" sl="64" fileid="6" />
+                <BranchPoint vc="0" uspid="70" ordinal="2" path="0" offset="58" offsetend="60" sl="70" fileid="6" />
+                <BranchPoint vc="0" uspid="70" ordinal="3" path="1" offset="58" offsetend="63" sl="70" fileid="6" />
+              </BranchPoints>
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="2" offset="2" sc="0" sl="63" ec="1" el="76" bec="0" bev="0" fileid="6" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="2" nPathComplexity="2" sequenceCoverage="0" branchCoverage="0" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="5" visitedSequencePoints="0" numBranchPoints="2" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="2" minCyclomaticComplexity="2" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.String AudioGuestbook.WorkerService.Services.AudioRecorder::GetLatestRecordingFilePath()</Name>
+              <FileRef uid="6" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="79" ordinal="0" sl="79" sc="1" el="79" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="80" ordinal="1" sl="80" sc="1" el="80" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="81" ordinal="2" sl="81" sc="1" el="81" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="82" ordinal="3" sl="82" sc="1" el="82" ec="2" bec="2" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="83" ordinal="4" sl="83" sc="1" el="83" ec="2" bec="0" bev="0" fileid="6" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="0" uspid="82" ordinal="0" path="0" offset="61" offsetend="63" sl="82" fileid="6" />
+                <BranchPoint vc="0" uspid="82" ordinal="1" path="1" offset="61" offsetend="66" sl="82" fileid="6" />
+              </BranchPoints>
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="3" offset="3" sc="0" sl="79" ec="1" el="83" bec="0" bev="0" fileid="6" xmlns:p8="xsi" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="28" visitedSequencePoints="18" numBranchPoints="8" visitedBranchPoints="1" sequenceCoverage="64.28" branchCoverage="12.5" maxCyclomaticComplexity="2" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="8" numMethods="12" />
+          <FullName>AudioGuestbook.WorkerService.Services.GpioAccess</FullName>
+          <Methods>
+            <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Boolean AudioGuestbook.WorkerService.Services.GpioAccess::get_HandsetLifted()</Name>
+              <FileRef uid="7" />
+              <SequencePoints>
+                <SequencePoint vc="2" uspid="45" ordinal="0" sl="45" sc="1" el="45" ec="2" bec="0" bev="0" fileid="7" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="45" ec="1" el="45" bec="0" bev="0" fileid="7" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Boolean AudioGuestbook.WorkerService.Services.GpioAccess::get_PlaybackPressed()</Name>
+              <FileRef uid="7" />
+              <SequencePoints>
+                <SequencePoint vc="2" uspid="47" ordinal="0" sl="47" sc="1" el="47" ec="2" bec="0" bev="0" fileid="7" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="47" ec="1" el="47" bec="0" bev="0" fileid="7" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Boolean AudioGuestbook.WorkerService.Services.GpioAccess::get_GreenLedOn()</Name>
+              <FileRef uid="7" />
+              <SequencePoints>
+                <SequencePoint vc="2" uspid="51" ordinal="0" sl="51" sc="1" el="51" ec="2" bec="0" bev="0" fileid="7" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="2" offset="2" sc="0" sl="51" ec="1" el="51" bec="0" bev="0" fileid="7" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="2" nPathComplexity="2" sequenceCoverage="0" branchCoverage="0" isConstructor="False" isGetter="False" isSetter="True" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="0" numBranchPoints="2" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="2" minCyclomaticComplexity="2" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void AudioGuestbook.WorkerService.Services.GpioAccess::set_GreenLedOn(System.Boolean)</Name>
+              <FileRef uid="7" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="52" ordinal="0" sl="52" sc="1" el="52" ec="2" bec="2" bev="0" fileid="7" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="0" uspid="52" ordinal="0" path="0" offset="7" offsetend="9" sl="52" fileid="7" />
+                <BranchPoint vc="0" uspid="52" ordinal="1" path="1" offset="7" offsetend="16" sl="52" fileid="7" />
+              </BranchPoints>
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="3" offset="3" sc="0" sl="52" ec="1" el="52" bec="0" bev="0" fileid="7" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Boolean AudioGuestbook.WorkerService.Services.GpioAccess::get_YellowLedOn()</Name>
+              <FileRef uid="7" />
+              <SequencePoints>
+                <SequencePoint vc="2" uspid="57" ordinal="0" sl="57" sc="1" el="57" ec="2" bec="0" bev="0" fileid="7" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="4" offset="4" sc="0" sl="57" ec="1" el="57" bec="0" bev="0" fileid="7" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="2" nPathComplexity="2" sequenceCoverage="0" branchCoverage="0" isConstructor="False" isGetter="False" isSetter="True" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="0" numBranchPoints="2" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="2" minCyclomaticComplexity="2" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void AudioGuestbook.WorkerService.Services.GpioAccess::set_YellowLedOn(System.Boolean)</Name>
+              <FileRef uid="7" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="58" ordinal="0" sl="58" sc="1" el="58" ec="2" bec="2" bev="0" fileid="7" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="0" uspid="58" ordinal="0" path="0" offset="7" offsetend="9" sl="58" fileid="7" />
+                <BranchPoint vc="0" uspid="58" ordinal="1" path="1" offset="7" offsetend="16" sl="58" fileid="7" />
+              </BranchPoints>
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="5" offset="5" sc="0" sl="58" ec="1" el="58" bec="0" bev="0" fileid="7" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Boolean AudioGuestbook.WorkerService.Services.GpioAccess::get_RedLedOn()</Name>
+              <FileRef uid="7" />
+              <SequencePoints>
+                <SequencePoint vc="2" uspid="63" ordinal="0" sl="63" sc="1" el="63" ec="2" bec="0" bev="0" fileid="7" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="6" offset="6" sc="0" sl="63" ec="1" el="63" bec="0" bev="0" fileid="7" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="2" nPathComplexity="2" sequenceCoverage="0" branchCoverage="0" isConstructor="False" isGetter="False" isSetter="True" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="0" numBranchPoints="2" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="2" minCyclomaticComplexity="2" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void AudioGuestbook.WorkerService.Services.GpioAccess::set_RedLedOn(System.Boolean)</Name>
+              <FileRef uid="7" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="64" ordinal="0" sl="64" sc="1" el="64" ec="2" bec="2" bev="0" fileid="7" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="0" uspid="64" ordinal="0" path="0" offset="7" offsetend="9" sl="64" fileid="7" />
+                <BranchPoint vc="0" uspid="64" ordinal="1" path="1" offset="7" offsetend="16" sl="64" fileid="7" />
+              </BranchPoints>
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="7" offset="7" sc="0" sl="64" ec="1" el="64" bec="0" bev="0" fileid="7" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="4" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void AudioGuestbook.WorkerService.Services.GpioAccess::Dispose()</Name>
+              <FileRef uid="7" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="68" ordinal="0" sl="68" sc="1" el="68" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="0" uspid="69" ordinal="1" sl="69" sc="1" el="69" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="0" uspid="70" ordinal="2" sl="70" sc="1" el="70" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="0" uspid="71" ordinal="3" sl="71" sc="1" el="71" ec="2" bec="0" bev="0" fileid="7" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="8" offset="8" sc="0" sl="68" ec="1" el="71" bec="0" bev="0" fileid="7" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="2" nPathComplexity="2" sequenceCoverage="50" branchCoverage="50" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="6" visitedSequencePoints="3" numBranchPoints="2" visitedBranchPoints="1" sequenceCoverage="50" branchCoverage="50" maxCyclomaticComplexity="2" minCyclomaticComplexity="2" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void AudioGuestbook.WorkerService.Services.GpioAccess::Dispose(System.Boolean)</Name>
+              <FileRef uid="7" />
+              <SequencePoints>
+                <SequencePoint vc="10" uspid="74" ordinal="0" sl="74" sc="1" el="74" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="10" uspid="75" ordinal="1" sl="75" sc="1" el="75" ec="2" bec="2" bev="1" fileid="7" />
+                <SequencePoint vc="0" uspid="76" ordinal="2" sl="76" sc="1" el="76" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="0" uspid="77" ordinal="3" sl="77" sc="1" el="77" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="0" uspid="78" ordinal="4" sl="78" sc="1" el="78" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="10" uspid="79" ordinal="5" sl="79" sc="1" el="79" ec="2" bec="0" bev="0" fileid="7" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="0" uspid="75" ordinal="0" path="0" offset="4" offsetend="6" sl="75" fileid="7" />
+                <BranchPoint vc="10" uspid="75" ordinal="1" path="1" offset="4" offsetend="20" sl="75" fileid="7" />
+              </BranchPoints>
+              <MethodPoint vc="3" uspid="0" p8:type="SequencePoint" ordinal="9" offset="9" sc="0" sl="74" ec="1" el="79" bec="0" bev="0" fileid="7" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void AudioGuestbook.WorkerService.Services.GpioAccess::Finalize()</Name>
+              <FileRef uid="7" />
+              <SequencePoints>
+                <SequencePoint vc="10" uspid="81" ordinal="0" sl="81" sc="1" el="81" ec="2" bec="0" bev="0" fileid="7" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="10" offset="10" sc="0" sl="81" ec="1" el="81" bec="0" bev="0" fileid="7" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="100" branchCoverage="100" isConstructor="True" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="9" visitedSequencePoints="9" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void AudioGuestbook.WorkerService.Services.GpioAccess::.ctor(System.Device.Gpio.GpioController)</Name>
+              <FileRef uid="7" />
+              <SequencePoints>
+                <SequencePoint vc="10" uspid="33" ordinal="0" sl="33" sc="1" el="33" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="10" uspid="34" ordinal="1" sl="34" sc="1" el="34" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="10" uspid="35" ordinal="2" sl="35" sc="1" el="35" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="10" uspid="37" ordinal="3" sl="37" sc="1" el="37" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="10" uspid="38" ordinal="4" sl="38" sc="1" el="38" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="10" uspid="40" ordinal="5" sl="40" sc="1" el="40" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="10" uspid="41" ordinal="6" sl="41" sc="1" el="41" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="10" uspid="42" ordinal="7" sl="42" sc="1" el="42" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="10" uspid="43" ordinal="8" sl="43" sc="1" el="43" ec="2" bec="0" bev="0" fileid="7" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="9" uspid="0" p8:type="SequencePoint" ordinal="11" offset="11" sc="0" sl="33" ec="1" el="43" bec="0" bev="0" fileid="7" xmlns:p8="xsi" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="3" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="1" visitedMethods="0" numMethods="1" />
+          <FullName>AudioGuestbook.WorkerService.Services.NSoundFactory</FullName>
+          <Methods>
+            <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="0" branchCoverage="100" isConstructor="True" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="3" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>NAudio.Wave.IWavePlayer AudioGuestbook.WorkerService.Services.NSoundFactory::GetWaveOutEvent()</Name>
+              <FileRef uid="8" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="13" ordinal="0" sl="13" sc="1" el="13" ec="2" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="0" uspid="14" ordinal="1" sl="14" sc="1" el="14" ec="2" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="0" uspid="15" ordinal="2" sl="15" sc="1" el="15" ec="2" bec="0" bev="0" fileid="8" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="13" ec="1" el="15" bec="0" bev="0" fileid="8" xmlns:p8="xsi" />
+            </Method>
+          </Methods>
+        </Class>
+      </Classes>
+    </Module>
+  </Modules>
+</CoverageSession>

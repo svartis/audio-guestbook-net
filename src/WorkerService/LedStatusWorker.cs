@@ -36,7 +36,7 @@ public sealed class LedStatusWorker : BackgroundService
                 SetLedLights(true, false, false);
                 break;
             case Mode.Prompting:
-            case Mode.Playing:
+            case Mode.Playback:
                 SetLedLights(false, true, false);
                 break;
             case Mode.Recording:

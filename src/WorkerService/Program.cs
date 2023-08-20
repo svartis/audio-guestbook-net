@@ -1,4 +1,5 @@
 using AudioGuestbook.WorkerService.Services;
+using System.Device.Gpio;
 
 //TODO: Seal all classes
 //TODO: Create collected settings
@@ -24,7 +25,8 @@ internal static class Program
             {
                 services
                     .AddSingleton<IAppStatus, AppStatus>()
-                    .AddSingleton<IGpioAccess, GpioAccess>()
+                    .AddSingleton<IGpioAccess, GpioAccess>(_ => new GpioAccess(new GpioController()))
+                    .AddSingleton<INSoundFactory, NSoundFactory>()
                     .AddSingleton<IAudioOutput, AudioOutput>()
                     .AddSingleton<IAudioRecorder, AudioRecorder>()
                     .AddHostedService<LedStatusWorker>()
