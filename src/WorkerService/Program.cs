@@ -1,5 +1,7 @@
 using AudioGuestbook.WorkerService.Services;
+using Microsoft.Extensions.DependencyInjection;
 using System.Device.Gpio;
+using Microsoft.Extensions.Options;
 
 //TODO: Seal all classes
 //TODO: Create collected settings
@@ -7,7 +9,6 @@ using System.Device.Gpio;
 //TODO: Tests
 //TODO: Fritzing diagram 
 //TODO: Timeout for recording
-//TODO: TagetFramework latest to allow build on linux
 
 namespace AudioGuestbook.WorkerService;
 
@@ -21,9 +22,11 @@ internal static class Program
 
     internal static IHostBuilder CreateHostBuilder(string[] args) =>
         Host.CreateDefaultBuilder(args)
-            .ConfigureServices((_, services) =>
+            .ConfigureServices((context, services) =>
             {
                 services
+                    .Configure<AppSettings>(context.Configuration)
+                    .AddSingleton(resolver => resolver.GetRequiredService<IOptions<AppSettings>>().Value)
                     .AddSingleton<IAppStatus, AppStatus>()
                     .AddSingleton<IGpioAccess, GpioAccess>(_ => new GpioAccess(new GpioController()))
                     .AddSingleton<INSoundFactory, NSoundFactory>()

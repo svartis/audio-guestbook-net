@@ -12,34 +12,31 @@ public interface IAudioRecorder
 public sealed class AudioRecorder : IAudioRecorder
 {
     private readonly INSoundFactory _nSoundFactory;
+    private readonly AppSettings _appSettings;
     private IWaveIn? _sourceStream;
     private WaveFileWriter? _waveWriter;
 
-    private const string FilePath = @"c:\Temp\Recordings";
-
-    public AudioRecorder(INSoundFactory nSoundFactory)
+    public AudioRecorder(INSoundFactory nSoundFactory, AppSettings appSettings)
     {
         _nSoundFactory = nSoundFactory;
+        _appSettings = appSettings;
     }
 
     public void Start()
     {
+        EnsureFolderExists();
+
         _sourceStream = _nSoundFactory.GetWaveInEvent();
-
         _sourceStream.DataAvailable += SourceStreamDataAvailable;
-
-        if (!Directory.Exists(FilePath))
-        {
-            Directory.CreateDirectory(FilePath);
-        }
 
         var filename = (DateTime.Now.ToString("s") + ".wav")
             .Replace("-", "")
             .Replace(":", "");
 
-        _waveWriter = new WaveFileWriter(Path.Combine(FilePath, filename), _sourceStream.WaveFormat);
+        _waveWriter = new WaveFileWriter(Path.Combine(_appSettings.AudioRecordingPath, filename), _sourceStream.WaveFormat);
         _sourceStream.StartRecording();
     }
+
 
     private void SourceStreamDataAvailable(object? sender, WaveInEventArgs e)
     {
@@ -68,8 +65,17 @@ public sealed class AudioRecorder : IAudioRecorder
 
     public string? GetLatestRecordingFilePath()
     {
-        var directory = new DirectoryInfo(FilePath);
+        EnsureFolderExists();
+        var directory = new DirectoryInfo(_appSettings.AudioRecordingPath);
         var fileInfo = directory.GetFiles("*.wav").MaxBy(f => f.LastWriteTime);
         return fileInfo?.FullName;
+    }
+
+    private void EnsureFolderExists()
+    {
+        if (!Directory.Exists(_appSettings.AudioRecordingPath))
+        {
+            Directory.CreateDirectory(_appSettings.AudioRecordingPath);
+        }
     }
 }
