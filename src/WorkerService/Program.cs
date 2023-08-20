@@ -2,10 +2,7 @@ using AudioGuestbook.WorkerService.Services;
 using System.Device.Gpio;
 using Microsoft.Extensions.Options;
 
-//TODO: Create collected settings
-//TODO: ReadMe
-//TODO: Fritzing diagram 
-//TODO: Timeout for recording
+//TODO: Maximum timeout for recording?
 
 namespace AudioGuestbook.WorkerService;
 

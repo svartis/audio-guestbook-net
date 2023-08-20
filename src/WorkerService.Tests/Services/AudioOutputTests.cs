@@ -15,7 +15,7 @@ public sealed class AudioOutputTests
         var logger = Substitute.For<ILogger<AudioOutput>>();
         var nSoundFactory = Substitute.For<INSoundFactory>();
         nSoundFactory.GetWaveOutEvent().Returns(new WaveOutEventMock());
-        _service = new AudioOutput(logger, nSoundFactory);
+        _service = new AudioOutput(logger, nSoundFactory, new AppSettings());
     }
 
     [Fact]

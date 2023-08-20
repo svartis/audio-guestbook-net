@@ -14,17 +14,17 @@ public sealed class AudioOutput : IAudioOutput
 {
     private readonly ILogger<AudioOutput> _logger;
     private readonly INSoundFactory _nSoundFactory;
+    private readonly AppSettings _appSettings;
 
     private readonly string _startupAudioFile;
     private readonly string _beepAudioFile;
     private readonly string _greetingAudioFile;
 
-    private readonly float _masterVolume = 0.5f;
-
-    public AudioOutput(ILogger<AudioOutput> logger, INSoundFactory nSoundFactory)
+    public AudioOutput(ILogger<AudioOutput> logger, INSoundFactory nSoundFactory, AppSettings appSettings)
     {
         _logger = logger;
         _nSoundFactory = nSoundFactory;
+        _appSettings = appSettings;
 
         var systemMediaFolderPath = Path.Combine(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location)!, "Media");
         _startupAudioFile = Path.Combine(systemMediaFolderPath, "startup.wav");
@@ -57,7 +57,7 @@ public sealed class AudioOutput : IAudioOutput
         _logger.LogInformation("Start audio {fileName}", fileName);
         await using var audioFile = new AudioFileReader(fileName);
         using var outputDevice = _nSoundFactory.GetWaveOutEvent();
-        outputDevice.Volume = _masterVolume;
+        outputDevice.Volume = _appSettings.MasterVolume;
         outputDevice.Init(audioFile);
         outputDevice.Play();
         _logger.LogInformation("Wait until audio has finished playing");
