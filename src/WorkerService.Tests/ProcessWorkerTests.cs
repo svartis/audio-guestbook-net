@@ -21,8 +21,9 @@ public sealed class ProcessWorkerTests
         _audioOutput = Substitute.For<IAudioOutput>();
         _audioRecorder = Substitute.For<IAudioRecorder>();
         _gpioAccess = Substitute.For<IGpioAccess>();
+        var appSettings = new AppSettings();
 
-        _worker = new ProcessWorker(logger, _appStatus, _audioOutput, _audioRecorder, _gpioAccess);
+        _worker = new ProcessWorker(logger, _appStatus, _audioOutput, _audioRecorder, _gpioAccess, appSettings);
     }
 
     [Fact]

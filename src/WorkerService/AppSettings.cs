@@ -7,4 +7,6 @@ public sealed class AppSettings
     public float BeepVolume { get; set; } = 0.1f;
     public float GreetingVolume { get; set; } = 0.3f;
     public float StartupVolume { get; set; } = 0.4f;
+
+    public int PromptingDelay { get; set; } = 1500;
 }

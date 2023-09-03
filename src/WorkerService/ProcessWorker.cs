@@ -10,18 +10,21 @@ public sealed class ProcessWorker : BackgroundService
     private readonly IAudioOutput _audioOutput;
     private readonly IAudioRecorder _audioRecorder;
     private readonly IGpioAccess _gpioAccess;
+    private readonly AppSettings _appSettings;
 
     public ProcessWorker(ILogger<ProcessWorker> logger,
         IAppStatus appStatus,
         IAudioOutput audioOutput,
         IAudioRecorder audioRecorder,
-        IGpioAccess gpioAccess)
+        IGpioAccess gpioAccess,
+        AppSettings appSettings)
     {
         _logger = logger;
         _appStatus = appStatus;
         _audioOutput = audioOutput;
         _audioRecorder = audioRecorder;
         _gpioAccess = gpioAccess;
+        _appSettings = appSettings;
     }
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -75,7 +78,7 @@ public sealed class ProcessWorker : BackgroundService
     internal async Task ModePrompting(CancellationToken cancellationToken)
     {
         // Wait a second for users to put the handset to their ear
-        await Task.Delay(1000, cancellationToken);
+        await Task.Delay(_appSettings.PromptingDelay, cancellationToken);
 
         // PlayAsync the greeting inviting them to record their message
         var promptingCanceled = await _audioOutput.PlayGreetingAsync(() =>
