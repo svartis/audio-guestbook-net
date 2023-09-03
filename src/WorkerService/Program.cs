@@ -3,6 +3,11 @@ using System.Device.Gpio;
 using Microsoft.Extensions.Options;
 
 //TODO: Maximum timeout for recording?
+//TODO: Bat file to auto install sc.exe create ".NET Joke Service" binpath="C:\Path\To\App.WindowsService.exe"
+//sc.exe start ".NET Joke Service"
+//sc.exe stop ".NET Joke Service"
+//sc.exe delete ".NET Joke Service"
+//TODO: Final update of diagram
 
 namespace AudioGuestbook.WorkerService;
 

@@ -13,7 +13,7 @@ public interface IGpioAccess
 public sealed class GpioAccess : IGpioAccess, IDisposable
 {
     private readonly GpioController _gpioController;
-    
+
     internal const int HandsetPinNumber = 5;
     private readonly GpioPin _handsetGpioPin;
 
