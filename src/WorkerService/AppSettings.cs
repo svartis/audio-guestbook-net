@@ -9,4 +9,6 @@ public sealed class AppSettings
     public float StartupVolume { get; set; } = 0.4f;
 
     public int PromptingDelay { get; set; } = 1500;
+
+    public int RecordLimitInSeconds { get; set; } = 90;
 }

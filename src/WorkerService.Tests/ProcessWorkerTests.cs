@@ -21,7 +21,10 @@ public sealed class ProcessWorkerTests
         _audioOutput = Substitute.For<IAudioOutput>();
         _audioRecorder = Substitute.For<IAudioRecorder>();
         _gpioAccess = Substitute.For<IGpioAccess>();
-        var appSettings = new AppSettings();
+        var appSettings = new AppSettings
+        {
+            RecordLimitInSeconds = 2
+        };
 
         _worker = new ProcessWorker(logger, _appStatus, _audioOutput, _audioRecorder, _gpioAccess, appSettings);
     }
@@ -125,5 +128,35 @@ public sealed class ProcessWorkerTests
 
         // Assert
         _appStatus.Mode.Should().Be(expectedMode);
+    }
+
+    [Fact]
+    public async Task ModeRecording_RecordingStopwatch_RecordingLimitExceeded()
+    {
+        // Arrange
+        _gpioAccess.HandsetLifted.Returns(true);
+        _worker.RecordingStart();
+        await Task.Delay(3000);
+
+        // Act
+        await _worker.ModeRecording(CancellationToken.None);
+
+        // Assert
+        _appStatus.Mode.Should().Be(Mode.Ready);
+    }
+
+    [Fact]
+    public async Task ModeRecording_RecordingStopwatch_RecordingLimitNotExceeded()
+    {
+        // Arrange
+        _gpioAccess.HandsetLifted.Returns(true);
+        _worker.RecordingStart();
+        await Task.Delay(1000);
+
+        // Act
+        await _worker.ModeRecording(CancellationToken.None);
+
+        // Assert
+        _appStatus.Mode.Should().Be(Mode.Recording);
     }
 }

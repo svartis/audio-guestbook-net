@@ -1,5 +1,6 @@
 ﻿using AudioGuestbook.WorkerService.Enums;
 using AudioGuestbook.WorkerService.Services;
+using System.Diagnostics;
 
 namespace AudioGuestbook.WorkerService;
 
@@ -11,6 +12,7 @@ public sealed class ProcessWorker : BackgroundService
     private readonly IAudioRecorder _audioRecorder;
     private readonly IGpioAccess _gpioAccess;
     private readonly AppSettings _appSettings;
+    private readonly Stopwatch _recordingStopwatch = new();
 
     public ProcessWorker(ILogger<ProcessWorker> logger,
         IAppStatus appStatus,
@@ -100,21 +102,37 @@ public sealed class ProcessWorker : BackgroundService
         // PlayAsync the tone sound effect
         await _audioOutput.PlayBeepAsync(cancellationToken);
 
-        _audioRecorder.Start();
-        _appStatus.Mode = Mode.Recording;
+        // Start recording
+        RecordingStart();
     }
 
     internal async Task ModeRecording(CancellationToken cancellationToken)
     {
-        // Handset is replaced
-        if (!_gpioAccess.HandsetLifted)
+        // Handset is replaced or recording limit exceeded
+        if (!_gpioAccess.HandsetLifted || _recordingStopwatch.Elapsed.Seconds > _appSettings.RecordLimitInSeconds)
         {
             // Stop recording
-            _audioRecorder.Stop();
+            RecordingStop();
+
             // PlayAsync audio tone to confirm recording has ended
             await _audioOutput.PlayBeepAsync(cancellationToken);
 
             _appStatus.Mode = Mode.Ready;
         }
+    }
+
+    internal void RecordingStart()
+    {
+        _audioRecorder.Start();
+        _recordingStopwatch.Reset();
+        _recordingStopwatch.Start();
+        _appStatus.Mode = Mode.Recording;
+    }
+
+    private void RecordingStop()
+    {
+        _audioRecorder.Stop();
+        _recordingStopwatch.Stop();
+        _recordingStopwatch.Reset();
     }
 }
