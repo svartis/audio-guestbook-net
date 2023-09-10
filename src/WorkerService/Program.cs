@@ -26,7 +26,7 @@ internal static class Program
                     .Configure<AppSettings>(context.Configuration.GetSection(nameof(AppSettings)))
                     .AddSingleton(resolver => resolver.GetRequiredService<IOptions<AppSettings>>().Value)
                     .AddSingleton<IAppStatus, AppStatus>()
-                    //TODO: GpioController for VS debug?
+                    //TODO: GpioController for VS debug? (See VirtualGpioController in Tests project)
                     .AddSingleton<IGpioAccess, GpioAccess>(_ => new GpioAccess(new GpioController()))
                     .AddSingleton<INSoundFactory, NSoundFactory>()
                     .AddSingleton<IAudioOutput, AudioOutput>()

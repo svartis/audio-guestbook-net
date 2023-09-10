@@ -4,8 +4,6 @@ namespace AudioGuestbook.WorkerService.Tests.Mocks;
 
 internal sealed class VirtualGpioDriver : GpioDriver
 {
-    internal PinValue this[int pinNumber] => _pinValues[pinNumber];
-
     internal event PinChangeEventHandler? InputPinValueChanged;
     internal event PinChangeEventHandler? OutputPinValueChanged;
 
@@ -79,10 +77,8 @@ internal sealed class VirtualGpioDriver : GpioDriver
         {
             throw new InvalidOperationException("Cannot open pin vale while it is opened.");
         }
-        else
-        {
-            _openStatus[pinNumber] = true;
-        }
+
+        _openStatus[pinNumber] = true;
     }
 
     protected override PinValue Read(int pinNumber)
@@ -91,10 +87,8 @@ internal sealed class VirtualGpioDriver : GpioDriver
         {
             return _pinValues[pinNumber];
         }
-        else
-        {
-            throw new InvalidOperationException("Cannot read pin vale while the pin is closed.");
-        }
+
+        throw new InvalidOperationException("Cannot read pin vale while the pin is closed.");
     }
 
     protected override void RemoveCallbackForPinValueChangedEvent(int pinNumber, PinChangeEventHandler callback)
@@ -120,7 +114,8 @@ internal sealed class VirtualGpioDriver : GpioDriver
                     TimedOut = true
                 };
             }
-            else if (_pinValues[pinNumber] != lastPinValue)
+
+            if (_pinValues[pinNumber] != lastPinValue)
             {
                 return new WaitForEventResult
                 {
