@@ -20,4 +20,4 @@ Due to NAudio framework that is used for playing and recording wav files only wo
 https://www.worproject.com/
 
 ## Diagram:
-![](https://raw.githubusercontent.com/svartis/audio-guestbook-net/blob/main/diagram.png)
+![Alt text](diagram.png?raw=true "Diagram")
