@@ -18,3 +18,6 @@ Note: The Raspberry Pi 4 also require a USB soundcard to be able to record audio
 Due to NAudio framework that is used for playing and recording wav files only working on windows the Raspberry Pi 4 is running Windows 11.
 
 https://www.worproject.com/
+
+## Diagram:
+![](https://raw.githubusercontent.com/svartis/audio-guestbook-net/blob/main/diagram.png)
