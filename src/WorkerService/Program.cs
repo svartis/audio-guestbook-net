@@ -6,7 +6,6 @@ using Microsoft.Extensions.Options;
 //sc.exe start ".NET Joke Service"
 //sc.exe stop ".NET Joke Service"
 //sc.exe delete ".NET Joke Service"
-//TODO: Final update of diagram
 
 namespace AudioGuestbook.WorkerService;
 
