@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
 		<!-- This version was needed to be able to run the GpioController on windows -->
-		<TargetFramework>net7.0-windows10.0.22621.0</TargetFramework>
+		<TargetFramework>net8.0-windows10.0.22621.0</TargetFramework>
 		<TreatWarningsAsErrors>True</TreatWarningsAsErrors>
 		<!--https://learn.microsoft.com/en-us/dotnet/core/extensions/workers?pivots=dotnet-7-0-->
 		<ServerGarbageCollection>true</ServerGarbageCollection>
@@ -14,10 +14,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
-		<PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="7.0.1" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="8.0.0" />
 		<PackageReference Include="NAudio" Version="2.2.1" />
-		<PackageReference Include="System.Device.Gpio" Version="3.0.0" />
+		<PackageReference Include="System.Device.Gpio" Version="3.1.0" />
 	</ItemGroup>
 
 	<ItemGroup>
