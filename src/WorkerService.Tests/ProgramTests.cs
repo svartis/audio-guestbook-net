@@ -12,7 +12,7 @@ public sealed class ProgramTests
         // Arrange
         // When running this test it thinks it's in Production, so force it to Development
         Environment.SetEnvironmentVariable("DOTNET_ENVIRONMENT", "Development");
-        using var host = Program.CreateHostBuilder(Array.Empty<string>()).Build();
+        using var host = Program.CreateHostBuilder([]).Build();
 
         // Act
         var serviceProvider = host.Services.GetRequiredService<IServiceProvider>();

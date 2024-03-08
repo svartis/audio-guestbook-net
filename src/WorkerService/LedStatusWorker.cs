@@ -3,24 +3,15 @@ using AudioGuestbook.WorkerService.Services;
 
 namespace AudioGuestbook.WorkerService;
 
-public sealed class LedStatusWorker : BackgroundService
+public sealed class LedStatusWorker(IAppStatus appStatus, IGpioAccess gpioAccess) : BackgroundService
 {
-    private readonly IAppStatus _appStatus;
-    private readonly IGpioAccess _gpioAccess;
-
-    public LedStatusWorker(IAppStatus appStatus, IGpioAccess gpioAccess)
-    {
-        _appStatus = appStatus;
-        _gpioAccess = gpioAccess;
-    }
-
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
         SetLedLights(true, true, true);
 
         while (!stoppingToken.IsCancellationRequested)
         {
-            SwitchModes(_appStatus.Mode);
+            SwitchModes(appStatus.Mode);
             await Task.Delay(100, stoppingToken);
         }
     }
@@ -48,8 +39,8 @@ public sealed class LedStatusWorker : BackgroundService
 
     private void SetLedLights(bool greenLedOn, bool yellowLedOn, bool redLedOn)
     {
-        _gpioAccess.GreenLedOn = greenLedOn;
-        _gpioAccess.YellowLedOn = yellowLedOn;
-        _gpioAccess.RedLedOn = redLedOn;
+        gpioAccess.GreenLedOn = greenLedOn;
+        gpioAccess.YellowLedOn = yellowLedOn;
+        gpioAccess.RedLedOn = redLedOn;
     }
 }

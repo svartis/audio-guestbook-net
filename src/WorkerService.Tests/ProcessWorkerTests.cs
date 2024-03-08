@@ -8,19 +8,15 @@ namespace AudioGuestbook.WorkerService.Tests;
 
 public sealed class ProcessWorkerTests
 {
-    private readonly IAppStatus _appStatus;
-    private readonly IAudioOutput _audioOutput;
-    private readonly IAudioRecorder _audioRecorder;
-    private readonly IGpioAccess _gpioAccess;
+    private readonly IAppStatus _appStatus = Substitute.For<IAppStatus>();
+    private readonly IAudioOutput _audioOutput = Substitute.For<IAudioOutput>();
+    private readonly IAudioRecorder _audioRecorder = Substitute.For<IAudioRecorder>();
+    private readonly IGpioAccess _gpioAccess = Substitute.For<IGpioAccess>();
     private readonly ProcessWorker _worker;
 
     public ProcessWorkerTests()
     {
         var logger = Substitute.For<ILogger<ProcessWorker>>();
-        _appStatus = Substitute.For<IAppStatus>();
-        _audioOutput = Substitute.For<IAudioOutput>();
-        _audioRecorder = Substitute.For<IAudioRecorder>();
-        _gpioAccess = Substitute.For<IGpioAccess>();
         var appSettings = new AppSettings
         {
             RecordLimitInSeconds = 2

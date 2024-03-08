@@ -7,15 +7,12 @@ namespace AudioGuestbook.WorkerService.Tests;
 
 public sealed class LedStatusWorkerTests
 {
-    private readonly IAppStatus _appStatus;
-    private readonly IGpioAccess _gpioAccess;
+    private readonly IAppStatus _appStatus = Substitute.For<IAppStatus>();
+    private readonly IGpioAccess _gpioAccess = Substitute.For<IGpioAccess>();
     private readonly LedStatusWorker _worker;
 
     public LedStatusWorkerTests()
     {
-        _appStatus = Substitute.For<IAppStatus>();
-        _gpioAccess = Substitute.For<IGpioAccess>();
-
         _worker = new LedStatusWorker(_appStatus, _gpioAccess);
     }
 

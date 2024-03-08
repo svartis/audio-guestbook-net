@@ -8,7 +8,7 @@ namespace AudioGuestbook.WorkerService.Tests.Services;
 
 public sealed class AudioOutputTests
 {
-    private readonly IAudioOutput _service;
+    private readonly AudioOutput _service;
 
     public AudioOutputTests()
     {

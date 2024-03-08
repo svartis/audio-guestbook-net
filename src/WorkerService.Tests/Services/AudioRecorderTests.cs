@@ -8,7 +8,7 @@ namespace AudioGuestbook.WorkerService.Tests.Services;
 
 public sealed class AudioRecorderTests
 {
-    private readonly IAudioRecorder _service;
+    private readonly AudioRecorder _service;
     private readonly AppSettings _appSettings;
 
     public AudioRecorderTests()
