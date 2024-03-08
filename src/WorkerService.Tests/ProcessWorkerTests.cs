@@ -7,6 +7,7 @@ using Microsoft.Extensions.Logging;
 
 namespace AudioGuestbook.WorkerService.Tests;
 
+[DisableParallelization]
 public sealed class ProcessWorkerTests
 {
     private readonly IAppStatus _appStatus = Substitute.For<IAppStatus>();
@@ -81,7 +82,6 @@ public sealed class ProcessWorkerTests
         _appStatus.Mode.Should().Be(expectedMode);
     }
 
-    [DisableParallelization]
     [Theory]
     [InlineData(false, false, Mode.Recording)]
     [InlineData(false, true, Mode.Recording)]
