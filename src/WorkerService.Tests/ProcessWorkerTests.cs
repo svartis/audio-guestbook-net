@@ -2,6 +2,7 @@
 using NSubstitute;
 using AudioGuestbook.WorkerService.Enums;
 using FluentAssertions;
+using Meziantou.Xunit;
 using Microsoft.Extensions.Logging;
 
 namespace AudioGuestbook.WorkerService.Tests;
@@ -80,6 +81,7 @@ public sealed class ProcessWorkerTests
         _appStatus.Mode.Should().Be(expectedMode);
     }
 
+    [DisableParallelization]
     [Theory]
     [InlineData(false, false, Mode.Recording)]
     [InlineData(false, true, Mode.Recording)]
