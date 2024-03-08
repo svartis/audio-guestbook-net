@@ -8,7 +8,7 @@ namespace AudioGuestbook.WorkerService.Tests.Services;
 public sealed class GpioAccessTests
 {
     private readonly VirtualGpioController _gpioController;
-    private readonly IGpioAccess _gpioAccess;
+    private readonly GpioAccess _gpioAccess;
 
     public GpioAccessTests()
     {
@@ -84,7 +84,7 @@ public sealed class GpioAccessTests
     public void Dispose_Test()
     {
         // Act
-        var act = () => _gpioController.Dispose();
+        var act = () => _gpioAccess.Dispose();
 
         // Assert
         act.Should().NotThrow();
