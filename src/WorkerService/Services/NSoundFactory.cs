@@ -10,14 +10,8 @@ public interface INSoundFactory
 }
 
 [ExcludeFromCodeCoverage]
-public sealed class NSoundFactory : INSoundFactory
+public sealed class NSoundFactory(AppSettings appSettings) : INSoundFactory
 {
-    private readonly AppSettings _appSettings;
-
-    public NSoundFactory(AppSettings appSettings) {
-        _appSettings = appSettings;
-    }
-
     public IWavePlayer GetWaveOutEvent()
     {
         return new WaveOutEvent();
@@ -28,7 +22,7 @@ public sealed class NSoundFactory : INSoundFactory
         return new WaveInEvent
         {
             // Default: 44100,16,2
-            WaveFormat = new WaveFormat(_appSettings.RecorderRate, _appSettings.RecorderBits, _appSettings.RecorderChannels),
+            WaveFormat = new WaveFormat(appSettings.RecorderRate, appSettings.RecorderBits, appSettings.RecorderChannels),
         };
     }
 }

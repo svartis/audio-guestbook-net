@@ -8,40 +8,31 @@ public interface IAudioRecorder
     void Stop();
 }
 
-public sealed class AudioRecorder : IAudioRecorder
+public sealed class AudioRecorder(ILogger<AudioRecorder> logger, INSoundFactory nSoundFactory, AppSettings appSettings)
+    : IAudioRecorder
 {
-    private readonly ILogger<AudioRecorder> _logger;
-    private readonly INSoundFactory _nSoundFactory;
-    private readonly AppSettings _appSettings;
     private IWaveIn? _sourceStream;
     private WaveFileWriter? _waveWriter;
-
-    public AudioRecorder(ILogger<AudioRecorder> logger, INSoundFactory nSoundFactory, AppSettings appSettings)
-    {
-        _logger = logger;
-        _nSoundFactory = nSoundFactory;
-        _appSettings = appSettings;
-    }
 
     public void Start()
     {
         EnsureFolderExists();
 
-        _sourceStream = _nSoundFactory.GetWaveInEvent();
+        _sourceStream = nSoundFactory.GetWaveInEvent();
         _sourceStream.DataAvailable += SourceStreamDataAvailable;
 
         var filename = (DateTime.Now.ToString("s") + ".wav")
             .Replace("-", "")
             .Replace(":", "");
 
-        _waveWriter = new WaveFileWriter(Path.Combine(_appSettings.AudioRecordingPath, filename), _sourceStream.WaveFormat);
-        _logger.LogInformation("Starting Recording");
+        _waveWriter = new WaveFileWriter(Path.Combine(appSettings.AudioRecordingPath, filename), _sourceStream.WaveFormat);
+        logger.LogInformation("Starting Recording");
         _sourceStream.StartRecording();
     }
 
     public void Stop()
     {
-        _logger.LogInformation("Stop Recording");
+        logger.LogInformation("Stop Recording");
         if (_sourceStream != null)
         {
             _sourceStream.StopRecording();
@@ -67,9 +58,9 @@ public sealed class AudioRecorder : IAudioRecorder
 
     private void EnsureFolderExists()
     {
-        if (!Directory.Exists(_appSettings.AudioRecordingPath))
+        if (!Directory.Exists(appSettings.AudioRecordingPath))
         {
-            Directory.CreateDirectory(_appSettings.AudioRecordingPath);
+            Directory.CreateDirectory(appSettings.AudioRecordingPath);
         }
     }
 }
